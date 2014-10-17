@@ -16,7 +16,7 @@ var app = (function () {
 
     app.init = function () {
         initFramework();
-        
+
         app.userToken = localStorage.getItem("userToken");
 
         if (app.userToken) {
@@ -27,7 +27,7 @@ var app = (function () {
 
         setTimeout(hideSplash, 500);
 
-        backgroundtask.start(function() {
+        /*backgroundtask.start(function() {
             var stringthing = "";
             var onPedometer = function (pedometerData) {
                 stringthing = new Date() + "<br/>" + pedometerData.distance;
@@ -38,7 +38,7 @@ var app = (function () {
                 }
             };
             pedometer.startPedometerUpdates(onPedometer);
-        });
+        });*/
     };
 
     app.preInit = function () {
