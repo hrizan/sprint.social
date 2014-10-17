@@ -48,6 +48,8 @@
 		DBDEC30BBC85499EB7F07CBB /* CDVSplashScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 454D2A218E87478592628663 /* CDVSplashScreen.m */; };
 		91B2C84CB7384F1CB04C4071 /* CDVStatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 8675E6FC3A3547289AB319AA /* CDVStatusBar.m */; };
 		7E34DF3656C747BCAFD5787B /* BackgroundTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DF6D05B9BB04676AFA6001D /* BackgroundTask.m */; };
+		1E1E54282B12403AA9EA206D /* Pedometer.m in Sources */ = {isa = PBXBuildFile; fileRef = 95AC5228B1F243BCAC5748E9 /* Pedometer.m */; };
+		931E648F9FC247A1B38BE652 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33A45DE3255E4ED3B8433AEE /* CoreMotion.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,6 +132,9 @@
 		0E579A7F03B4404980BD8923 /* CDVStatusBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVStatusBar.h"; path = "org.apache.cordova.statusbar/CDVStatusBar.h"; sourceTree = "<group>"; fileEncoding = 4; };
 		0DF6D05B9BB04676AFA6001D /* BackgroundTask.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "BackgroundTask.m"; path = "uk.co.ilee.backgroundtask/BackgroundTask.m"; sourceTree = "<group>"; fileEncoding = 4; };
 		6D5894065EC040B381F3F0F4 /* BackgroundTask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "BackgroundTask.h"; path = "uk.co.ilee.backgroundtask/BackgroundTask.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		95AC5228B1F243BCAC5748E9 /* Pedometer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "Pedometer.m"; path = "uk.co.ilee.pedometer/Pedometer.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		F4C19FA6AB8141FB8E2427C0 /* Pedometer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Pedometer.h"; path = "uk.co.ilee.pedometer/Pedometer.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		33A45DE3255E4ED3B8433AEE /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "CoreMotion.framework"; path = "System/Library/Frameworks/CoreMotion.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +148,7 @@
 				305D5FD1115AB8F900A74A75 /* MobileCoreServices.framework in Frameworks */,
 				04276A3B2BD2485D9C6BF986 /* Security.framework in Frameworks */,
 				477907CDC0A7432884161374 /* AudioToolbox.framework in Frameworks */,
+				931E648F9FC247A1B38BE652 /* CoreMotion.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,6 +244,7 @@
 				305D5FD0115AB8F900A74A75 /* MobileCoreServices.framework */,
 				6119EDA36F484ABBA54CFC9C /* Security.framework */,
 				7229B43006BA4A2D87244531 /* AudioToolbox.framework */,
+				33A45DE3255E4ED3B8433AEE /* CoreMotion.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -269,6 +276,8 @@
 				0E579A7F03B4404980BD8923 /* CDVStatusBar.h */,
 				0DF6D05B9BB04676AFA6001D /* BackgroundTask.m */,
 				6D5894065EC040B381F3F0F4 /* BackgroundTask.h */,
+				95AC5228B1F243BCAC5748E9 /* Pedometer.m */,
+				F4C19FA6AB8141FB8E2427C0 /* Pedometer.h */,
 			);
 			name = Plugins;
 			path = "Sprint/Plugins";
@@ -472,6 +481,7 @@
 				DBDEC30BBC85499EB7F07CBB /* CDVSplashScreen.m in Sources */,
 				91B2C84CB7384F1CB04C4071 /* CDVStatusBar.m in Sources */,
 				7E34DF3656C747BCAFD5787B /* BackgroundTask.m in Sources */,
+				1E1E54282B12403AA9EA206D /* Pedometer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

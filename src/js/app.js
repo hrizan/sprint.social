@@ -1,4 +1,4 @@
-/*global Dom7, StatusBar, signup, plugins */
+/*global Dom7, StatusBar, signup, plugins, backgroundtask, pedometer */
 
 var $$ = Dom7;
 
@@ -26,6 +26,18 @@ var app = (function () {
         }
 
         setTimeout(hideSplash, 500);
+
+        backgroundtask.start(function() {
+            var stringthing = "";
+            var onPedometer = function (pedometerData) {
+                stringthing = new Date() + "<br/>" + pedometerData.distance;
+                document.body.innerHTML = stringthing;
+                if (pedometerData.distance >= 100) {
+                    navigator.notification.beep(3);
+                }
+            };
+            pedometer.startPedometerUpdates(onPedometer);
+        });
     };
 
     app.preInit = function () {

@@ -24,6 +24,12 @@
                             "xml": "false",
                             "count": 1
                         }
+                    ],
+                    "CoreMotion.framework": [
+                        {
+                            "xml": "false",
+                            "count": 1
+                        }
                     ]
                 }
             },
@@ -65,6 +71,10 @@
                         {
                             "xml": "<feature name=\"BackgroundTask\"><param name=\"ios-package\" value=\"BackgroundTask\" /><param name=\"onload\" value=\"true\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Pedometer\"><param name=\"ios-package\" value=\"Pedometer\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -91,6 +101,9 @@
             "PACKAGE_NAME": "social.sprint"
         },
         "uk.co.ilee.backgroundtask": {
+            "PACKAGE_NAME": "social.sprint"
+        },
+        "uk.co.ilee.pedometer": {
             "PACKAGE_NAME": "social.sprint"
         }
     },
