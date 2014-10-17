@@ -1,0 +1,101 @@
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-touch-callout: none;
+}
+
+::-webkit-scrollbar {
+	display: none;
+}
+
+::-webkit-input-placeholder {
+    color: #FFF;
+    opacity: 0.4;
+}
+
+@font-face {
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 200;
+    src: url(Raleway-ExtraLight.woff) format("woff");
+}
+
+@font-face {
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 300;
+    src: url(Raleway-Light.woff) format("woff");
+}
+
+@font-face {
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 400;
+    src: url(Raleway.woff) format("woff");
+}
+
+@font-face {
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 600;
+    src: url(Raleway-SemiBold.woff) format("woff");
+}
+
+html.with-statusbar-overlay body {
+    padding-top: 0px!important;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+}
+
+body {
+    -webkit-touch-callout: none;
+    -webkit-text-size-adjust: none;
+    -webkit-user-select: none;
+    font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    position: absolute;
+}
+
+input[type="number"], input[type="tel"]{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif!important;
+    font-weight: 300!important;
+    letter-spacing: 0.5px;
+}
+
+.hidden {
+    display: none!important;
+}
+
+.content-block {
+    margin: 64px 0 0;
+    padding: 2px 15px;
+}
+
+.page, .page-content {
+    background: #f7f7f7;
+}
+
+.content-block {
+    margin: 64px 0 0;
+    padding: 2px 15px;
+}
+
+.badge {
+    font-family: "HelveticaNeue", Helvetica, Arial, sans-serif;
+}
+
+.preloader.full {
+    position: absolute;
+    left: 50%;
+    top: 33%;
+    margin: -20px 0 0 -20px;
+    display: block;
+    width: 40px;
+    height: 40px;
+}

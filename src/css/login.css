@@ -1,0 +1,30 @@
+.page.signup {
+    background: #444;
+}
+
+.page.signup h1 {
+    margin: 64px auto;
+    text-align: center;
+    color: #FFF;
+    font-weight: 200;
+    font-size: 3em;
+}
+
+.page.signup h2 {
+    font-weight: 200;
+    text-align: center;
+    color: #FFF;
+    margin-top: -19px;
+}
+
+.page.signup a.signup {
+    border-radius: 0;
+    border: 1px solid #FFF;
+    color: #FFF;
+    background: transparent;
+    margin: 96px 15px 0px 15px;
+}
+
+.page.signup a.signup.active-state {
+    background: rgba(255, 255, 255, 0.1);
+}
