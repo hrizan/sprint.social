@@ -5,7 +5,9 @@ var signup = (function() {
 
     var signup = {};
 
-    signup.init = function() {};
+    signup.init = function() {
+        facebookConnectPlugin.
+    };
 
     signup.withFacebook = function() {
         facebookConnectPlugin.login(['user_friends', 'public_profile', 'email'],
