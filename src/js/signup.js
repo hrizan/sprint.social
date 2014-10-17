@@ -1,4 +1,4 @@
-/*global facebookConnectPlugin, telerik */
+/*global app, facebookConnectPlugin, telerik, localStorage */
 
 var signup = (function() {
     "use strict";
@@ -6,7 +6,11 @@ var signup = (function() {
     var signup = {};
 
     signup.init = function() {
-        facebookConnectPlugin.
+        facebookConnectPlugin.getLoginStatus(function(status) {
+            app.userToken = status.authResponse.accessToken;
+            localStorage.setItem("userToken", app.userToken);
+            app.loadMain();
+        }, function() {});
     };
 
     signup.withFacebook = function() {
@@ -15,11 +19,12 @@ var signup = (function() {
                 console.log(JSON.stringify(status));
                 telerik.login(status.authResponse.accessToken, function(response) {
                     console.log(JSON.stringify(response));
-                },function() {});
+                }, function() {});
             },
             function(err) {
                 console.log(JSON.stringify(err));
             });
     };
+
     return signup;
 })();

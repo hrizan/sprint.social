@@ -12,12 +12,12 @@ var telerik = (function() {
     };
 
     var authenticatedRequest = function(token) {
-        let request = anonRequest();
+        var request = anonRequest();
 
         request.setRequestHeader("Authorization", token);
 
         return request;
-    }
+    };
 
     var get = fjs.curry(function(request, service, error, succ) {
         request.open("GET", serviceUri(service), true);
@@ -27,7 +27,7 @@ var telerik = (function() {
                 return succ(request.responseText);
             }
             return error(request);
-        }
+        };
 
         request.send();
     });
@@ -41,11 +41,11 @@ var telerik = (function() {
                 return succ(request.responseText, params);
             }
             return error(request);
-        }
-
-        return request;
+        };
 
         request.send(JSON.stringify(params));
+        
+        return request;
     });
 
 
@@ -56,7 +56,7 @@ var telerik = (function() {
                 "Token": token
             }
         });
-    }
+    };
 
 
     return telerik;
