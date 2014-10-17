@@ -6,11 +6,11 @@ var app = (function () {
     var app = {};
 
     app.init = function () {
-        navigator.splashscreen.hide();
-
         app.kendo = new kendo.mobile.Application(document.body, {
             initial: "views/signin.html"
         });
+
+        navigator.splashscreen.hide();
     };
 
     return app;
