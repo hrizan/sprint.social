@@ -16,7 +16,7 @@
                     "AudioToolbox.framework": [
                         {
                             "xml": "true",
-                            "count": 1
+                            "count": 2
                         }
                     ],
                     "CoreGraphics.framework": [
@@ -75,6 +75,10 @@
                         {
                             "xml": "<feature name=\"Pedometer\"><param name=\"ios-package\" value=\"Pedometer\" /><param name=\"onload\" value=\"true\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Vibration\"><param name=\"ios-package\" value=\"CDVVibration\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -104,6 +108,9 @@
             "PACKAGE_NAME": "social.sprint"
         },
         "uk.co.ilee.pedometer": {
+            "PACKAGE_NAME": "social.sprint"
+        },
+        "org.apache.cordova.vibration": {
             "PACKAGE_NAME": "social.sprint"
         }
     },

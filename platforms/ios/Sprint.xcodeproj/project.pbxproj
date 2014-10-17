@@ -50,6 +50,7 @@
 		7E34DF3656C747BCAFD5787B /* BackgroundTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DF6D05B9BB04676AFA6001D /* BackgroundTask.m */; };
 		1E1E54282B12403AA9EA206D /* Pedometer.m in Sources */ = {isa = PBXBuildFile; fileRef = 95AC5228B1F243BCAC5748E9 /* Pedometer.m */; };
 		931E648F9FC247A1B38BE652 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33A45DE3255E4ED3B8433AEE /* CoreMotion.framework */; };
+		567321EE24A449699BA6218D /* CDVVibration.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B720EC3F073415DAF671405 /* CDVVibration.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -135,6 +136,8 @@
 		95AC5228B1F243BCAC5748E9 /* Pedometer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "Pedometer.m"; path = "uk.co.ilee.pedometer/Pedometer.m"; sourceTree = "<group>"; fileEncoding = 4; };
 		F4C19FA6AB8141FB8E2427C0 /* Pedometer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Pedometer.h"; path = "uk.co.ilee.pedometer/Pedometer.h"; sourceTree = "<group>"; fileEncoding = 4; };
 		33A45DE3255E4ED3B8433AEE /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "CoreMotion.framework"; path = "System/Library/Frameworks/CoreMotion.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
+		3B720EC3F073415DAF671405 /* CDVVibration.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVVibration.m"; path = "org.apache.cordova.vibration/CDVVibration.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		45F029DACE444135B83F695A /* CDVVibration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVVibration.h"; path = "org.apache.cordova.vibration/CDVVibration.h"; sourceTree = "<group>"; fileEncoding = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -278,6 +281,8 @@
 				6D5894065EC040B381F3F0F4 /* BackgroundTask.h */,
 				95AC5228B1F243BCAC5748E9 /* Pedometer.m */,
 				F4C19FA6AB8141FB8E2427C0 /* Pedometer.h */,
+				3B720EC3F073415DAF671405 /* CDVVibration.m */,
+				45F029DACE444135B83F695A /* CDVVibration.h */,
 			);
 			name = Plugins;
 			path = "Sprint/Plugins";
@@ -482,6 +487,7 @@
 				91B2C84CB7384F1CB04C4071 /* CDVStatusBar.m in Sources */,
 				7E34DF3656C747BCAFD5787B /* BackgroundTask.m in Sources */,
 				1E1E54282B12403AA9EA206D /* Pedometer.m in Sources */,
+				567321EE24A449699BA6218D /* CDVVibration.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
