@@ -2,15 +2,15 @@
   "ProjectName": "Sprint Social",
   "ProjectGuid": "2a405db9-dedf-4741-a040-2267a76e98fb",
   "projectVersion": 1,
-  "AppIdentifier": "com.telerik.SprintSocial",
+  "AppIdentifier": "social.sprint.app",
   "DisplayName": "Sprint Social",
-  "Author": "",
-  "Description": "",
+  "Author": "Lee & Ryan",
+  "Description": "Sprint Social",
   "BundleVersion": "1.0",
   "AndroidVersionCode": "1",
   "iOSDeviceFamily": [
     "1",
-	"2"
+    "2"
   ],
   "iOSBackgroundMode": [],
   "WP8TileTitle": "",
@@ -63,8 +63,7 @@
     "android.permission.WRITE_EXTERNAL_STORAGE"
   ],
   "DeviceOrientations": [
-    "Portrait",
-    "Landscape"
+    "Portrait"
   ],
   "AndroidHardwareAcceleration": "false",
   "iOSStatusBarStyle": "Default",
