@@ -47,6 +47,7 @@
 		5161BBCB8681420DBCAB68EC /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D80524673B3F403797FB59BA /* AudioToolbox.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		ABD361E8432547659217D341 /* CDVStatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = AB328D180DE742358146F717 /* CDVStatusBar.m */; };
 		6C2C8584D1C34FFB8145BCD8 /* CDVSplashScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 846E807EDC504EDDBC8D07B2 /* CDVSplashScreen.m */; };
+		37C528686E3D45D9BAD90445 /* BackgroundTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B114D8A56154AB899263D25 /* BackgroundTask.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,6 +128,8 @@
 		90CB452A50154FD48EF775DA /* CDVStatusBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVStatusBar.h"; path = "org.apache.cordova.statusbar/CDVStatusBar.h"; sourceTree = "<group>"; fileEncoding = 4; };
 		846E807EDC504EDDBC8D07B2 /* CDVSplashScreen.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVSplashScreen.m"; path = "org.apache.cordova.splashscreen/CDVSplashScreen.m"; sourceTree = "<group>"; fileEncoding = 4; };
 		8A5EA5A148F448A6ABC4BDA7 /* CDVSplashScreen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVSplashScreen.h"; path = "org.apache.cordova.splashscreen/CDVSplashScreen.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		1B114D8A56154AB899263D25 /* BackgroundTask.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "BackgroundTask.m"; path = "uk.co.ilee.backgroundtask/BackgroundTask.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		F114F7778E214C0EBD799E95 /* BackgroundTask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "BackgroundTask.h"; path = "uk.co.ilee.backgroundtask/BackgroundTask.h"; sourceTree = "<group>"; fileEncoding = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -264,6 +267,8 @@
 				90CB452A50154FD48EF775DA /* CDVStatusBar.h */,
 				846E807EDC504EDDBC8D07B2 /* CDVSplashScreen.m */,
 				8A5EA5A148F448A6ABC4BDA7 /* CDVSplashScreen.h */,
+				1B114D8A56154AB899263D25 /* BackgroundTask.m */,
+				F114F7778E214C0EBD799E95 /* BackgroundTask.h */,
 			);
 			name = Plugins;
 			path = "Sprint Social/Plugins";
@@ -466,6 +471,7 @@
 				812B897E61DE4E14AC8EF786 /* CDVNotification.m in Sources */,
 				ABD361E8432547659217D341 /* CDVStatusBar.m in Sources */,
 				6C2C8584D1C34FFB8145BCD8 /* CDVSplashScreen.m in Sources */,
+				37C528686E3D45D9BAD90445 /* BackgroundTask.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

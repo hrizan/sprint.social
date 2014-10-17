@@ -58,4 +58,8 @@
         <param name="ios-package" value="CDVSplashScreen" />
         <param name="onload" value="true" />
     </feature>
+    <feature name="BackgroundTask">
+        <param name="ios-package" value="BackgroundTask" />
+        <param name="onload" value="true" />
+    </feature>
 </widget>
