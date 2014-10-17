@@ -1,7 +1,7 @@
 var telerik = (function() {
     "use strict";
 
-    var telerik = {}
+    var telerik = {};
 
     var serviceUri = function(service) {
         return "http://api.everlive.com/v1/Cpz7JJXyDcIJPbOl/" + service;
@@ -26,11 +26,13 @@ var telerik = (function() {
             if (request.status >= 200 && request.status < 400) {
                 return succ(request.responseText);
             }
+
             return error(request);
         };
 
         request.send();
     });
+
 
     var post = fjs.curry(function(request, service, params, error, succ) {
         request.open("POST", serviceUri(service), true);
@@ -42,6 +44,7 @@ var telerik = (function() {
             }
             return error(request);
         };
+
 
         request.send(JSON.stringify(params));
         

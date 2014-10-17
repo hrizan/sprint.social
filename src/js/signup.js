@@ -7,6 +7,7 @@ var signup = (function() {
 
     signup.init = function() {
         facebookConnectPlugin.getLoginStatus(function(status) {
+            console.log(status);
             app.userToken = status.authResponse.accessToken;
             localStorage.setItem("userToken", app.userToken);
             app.loadMain();
