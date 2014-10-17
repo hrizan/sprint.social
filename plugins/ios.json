@@ -7,27 +7,33 @@
         "files": {
             "framework": {
                 "parents": {
-                    "Security.framework": [
+                    "libsqlite3.dylib": [
                         {
                             "xml": "false",
                             "count": 1
                         }
                     ],
-                    "AudioToolbox.framework": [
+                    "Social.framework": [
                         {
                             "xml": "true",
-                            "count": 2
-                        }
-                    ],
-                    "CoreGraphics.framework": [
-                        {
-                            "xml": "false",
                             "count": 1
                         }
                     ],
-                    "CoreMotion.framework": [
+                    "Accounts.framework": [
                         {
-                            "xml": "false",
+                            "xml": "true",
+                            "count": 1
+                        }
+                    ],
+                    "AdSupport.framework": [
+                        {
+                            "xml": "true",
+                            "count": 1
+                        }
+                    ],
+                    "Security.framework": [
+                        {
+                            "xml": "true",
                             "count": 1
                         }
                     ]
@@ -37,47 +43,53 @@
                 "parents": {
                     "/*": [
                         {
-                            "xml": "<feature name=\"UniqueDeviceID\"><param name=\"ios-package\" value=\"CDVUniqueDeviceID\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "xml": "<feature name=\"FacebookConnectPlugin\"><param name=\"ios-package\" value=\"FacebookConnectPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
                             "count": 1
                         },
                         {
-                            "xml": "<feature name=\"Console\"><param name=\"ios-package\" value=\"CDVLogger\" /></feature>",
+                            "xml": "<plugin name=\"FacebookConnectPlugin\" value=\"FacebookConnectPlugin\" />",
                             "count": 1
                         },
                         {
-                            "xml": "<feature name=\"Device\"><param name=\"ios-package\" value=\"CDVDevice\" /></feature>",
+                            "xml": "<access origin=\"https://m.facebook.com\" />",
                             "count": 1
                         },
                         {
-                            "xml": "<feature name=\"Notification\"><param name=\"ios-package\" value=\"CDVNotification\" /></feature>",
+                            "xml": "<access origin=\"https://graph.facebook.com\" />",
                             "count": 1
                         },
                         {
-                            "xml": "<feature name=\"SplashScreen\"><param name=\"ios-package\" value=\"CDVSplashScreen\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "xml": "<access origin=\"https://api.facebook.com\" />",
                             "count": 1
                         },
                         {
-                            "xml": "<feature name=\"StatusBar\"><param name=\"ios-package\" onload=\"true\" value=\"CDVStatusBar\" /></feature>",
+                            "xml": "<access origin=\"https://*.fbcdn.net\" />",
                             "count": 1
                         },
                         {
-                            "xml": "<preference name=\"StatusBarOverlaysWebView\" value=\"true\" />",
+                            "xml": "<access origin=\"https://*.akamaihd.net\" />",
                             "count": 1
-                        },
+                        }
+                    ]
+                }
+            },
+            "*-Info.plist": {
+                "parents": {
+                    "FacebookAppID": [
                         {
-                            "xml": "<preference name=\"StatusBarStyle\" value=\"lightcontent\" />",
+                            "xml": "<string>327240324128956</string>",
                             "count": 1
-                        },
+                        }
+                    ],
+                    "FacebookDisplayName": [
                         {
-                            "xml": "<feature name=\"BackgroundTask\"><param name=\"ios-package\" value=\"BackgroundTask\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "xml": "<string>Sprint Social</string>",
                             "count": 1
-                        },
+                        }
+                    ],
+                    "CFBundleURLTypes": [
                         {
-                            "xml": "<feature name=\"Pedometer\"><param name=\"ios-package\" value=\"Pedometer\" /><param name=\"onload\" value=\"true\" /></feature>",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"Vibration\"><param name=\"ios-package\" value=\"CDVVibration\" /></feature>",
+                            "xml": "<array><dict><key>CFBundleURLSchemes</key><array><string>fb327240324128956</string></array></dict></array>",
                             "count": 1
                         }
                     ]
@@ -86,31 +98,9 @@
         }
     },
     "installed_plugins": {
-        "hu.dpal.phonegap.plugins.UniqueDeviceID": {
-            "PACKAGE_NAME": "social.sprint"
-        },
-        "org.apache.cordova.console": {
-            "PACKAGE_NAME": "social.sprint"
-        },
-        "org.apache.cordova.device": {
-            "PACKAGE_NAME": "social.sprint"
-        },
-        "org.apache.cordova.dialogs": {
-            "PACKAGE_NAME": "social.sprint"
-        },
-        "org.apache.cordova.splashscreen": {
-            "PACKAGE_NAME": "social.sprint"
-        },
-        "org.apache.cordova.statusbar": {
-            "PACKAGE_NAME": "social.sprint"
-        },
-        "uk.co.ilee.backgroundtask": {
-            "PACKAGE_NAME": "social.sprint"
-        },
-        "uk.co.ilee.pedometer": {
-            "PACKAGE_NAME": "social.sprint"
-        },
-        "org.apache.cordova.vibration": {
+        "com.phonegap.plugins.facebookconnect": {
+            "APP_ID": "327240324128956",
+            "APP_NAME": "Sprint Social",
             "PACKAGE_NAME": "social.sprint"
         }
     },

@@ -49,38 +49,15 @@ var telerik = (function() {
     });
 
 
-    telerik.registerUser = function(username, password, displayname) {
+    telerik.login = function(token) {
         return post(anonRequest(), "Users", {
-            Username: username,
-            Password: password,
-            DisplayName: displayname
-        });
-    }
-
-    telerik.login = function(username, password) {
-        return get(anonRequest(), "oauth/token", {
-            username: username,
-            password: password,
-            grant_type: 'password'
-        });
-    }
-
-    telerik.linkFaceBook = function(token, userid, facebookToken) {
-        return post(authenticatedRequest(token), "Users/" + userid + "/link", {
-            Provider: "Facebook",
-            Token: facebookToken
+            Identity: {
+                "Provider": "Facebook",
+                "Token": token
+            }
         });
     }
 
 
     return telerik;
-});
-
-var users = (function() {
-    "use strict";
-
-    var users = {};
-
-
-
-});
+})();
