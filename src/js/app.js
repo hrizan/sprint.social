@@ -16,7 +16,7 @@ var app = (function () {
 
     app.init = function () {
         initFramework();
-
+        
         app.userToken = localStorage.getItem("userToken");
 
         if (app.userToken) {
