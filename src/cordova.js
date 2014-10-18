@@ -77,7 +77,7 @@ navigator.notification = (function() {
     notification.vibrate = function(message) {
         console.log("navigator.notification.vibrate()");
     };
-    
+
     notification.beep = function(count) {
         console.log("navigator.notification.beep('" + count + "')");
     };
@@ -255,17 +255,26 @@ var pedometer = (function() {
 
     pedometer.startPedometerUpdates = function (callback) {
         var total = 0;
+        var doStop;
 
         var sendDistance = function () {
             total += Math.random() * 10;
             setTimeout(function() {
                 console.log(total);
                 callback({ "distance": total });
-                sendDistance();
+                if (!doStop) {
+                    sendDistance();
+                } else {
+                    doStop = false;
+                }
             }, 500);
         };
 
         sendDistance();
+    };
+
+    pedometer.stopPedometerUpdates = function (callback) {
+        setTimeout(callback, 10);
     };
 
     return pedometer;

@@ -16,6 +16,7 @@ var race = (function() {
 
     var startRace = function () {
         $$(".marks").css("display", "none");
+        $$(".link.back").css("display", "none");
         $$(".go").css("display", "block");
 
         startBackgroundTask();
@@ -23,6 +24,7 @@ var race = (function() {
 
     var stopRace = function () {
         $$(".marks").css("display", "block");
+        $$(".link.back").css("display", "block");
         $$(".go").css("display", "none");
     };
 
@@ -36,8 +38,7 @@ var race = (function() {
     };
 
     var backgroundDistanceMonitor = function () {
-        var onPedometer =
-        pedometer.startPedometerUpdates(onPedometer);
+        pedometer.startPedometerUpdates(onPedometerDataReceived);
     };
 
     var onPedometerDataReceived = function (pedometerData) {
@@ -46,7 +47,7 @@ var race = (function() {
         if (pedometerData.distance >= 100) {
             navigator.vibrate(3000);
             navigator.notification.beep(3);
-            finishRace();
+            pedometer.stopPedometerUpdates(finishRace);
         }
     };
 
