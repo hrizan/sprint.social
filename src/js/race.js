@@ -15,6 +15,17 @@ var race = (function() {
             solo: qs.solo
         };
         configureButtons();
+        trackRace(qs);
+    };
+
+    var trackRace = function (qs) {
+        if (qs.solo) {
+            app.trackFeature("Race.Individual");
+        } else if (qs.friendId) {
+            app.trackFeature("Race.ChallengeNew");
+        } else {
+            app.trackFeature("Race.ChallengeReponse");
+        }
     };
 
     var configureButtons = function () {
@@ -51,6 +62,7 @@ var race = (function() {
         } else {
             $$(".challenge").css("display", "block");
         }
+        trackComplete();
     };
 
     var startBackgroundTask = function () {
@@ -107,6 +119,16 @@ var race = (function() {
             app.mainView.loadPage("result.html?raceId=" + race.data.raceId);
         }
         // TODO show when no result yet
+    };
+
+    var trackComplete = function () {
+        if (race.data.solo) {
+            app.trackFeature("Complete.Individual");
+        } else if (race.data.friendId) {
+            app.trackFeature("Complete.ChallengeNew");
+        } else {
+            app.trackFeature("Complete.ChallengeReponse");
+        }
     };
 
     var seeResult = function () {

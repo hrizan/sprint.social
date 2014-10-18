@@ -11,6 +11,7 @@ var app = (function() {
     app.f7 = null;
     app.mainView = null;
     app.signupView = null;
+    app.monitor = null;
 
     app.store = function(k, v) {
         localStorage.setItem(k, JSON.stringify(v));
@@ -20,9 +21,9 @@ var app = (function() {
         return JSON.parse(localStorage.getItem(k));
     };
 
-
     app.init = function() {
         initFramework();
+        initAnalytics();
 
         app.userToken = app.load("userToken");
         app.user = app.load("user");
@@ -48,6 +49,21 @@ var app = (function() {
     var setDeviceId = function(uuid) {
         device.uuid = uuid;
         app.init();
+    };
+
+    var initAnalytics = function () {
+        var analytics = window.plugins.EqatecAnalytics;
+        var settings = analytics.Factory.CreateSettings("378434087bd042b590feff400a76f6cf", "1.0.0");
+        analytics.Factory.CreateMonitorWithSettings(settings, function() {
+            app.monitor = analytics.Monitor;
+            app.monitor.Start();
+        });
+    };
+
+    app.trackFeature = function (feature) {
+        if (app.monitor) {
+            app.monitor.TrackFeature(feature);
+        }
     };
 
     app.loadMain = function() {
