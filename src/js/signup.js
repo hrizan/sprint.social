@@ -13,29 +13,34 @@ var signup = (function() {
             telerik.me(app.userToken, function(user) {
                 app.user = user;
                 localStorage.setItem("user", user);
-                succ(user);
+                return succ(user);
             }, function() {});
         }, function() {});
     };
 
     signup.init = function() {
         facebookConnectPlugin.getLoginStatus(function(res) {
-            if(res.status !== "connected") {return;}
-            telerikSignIn(status.authResponse.accessToken,
-                function() {
-                    app.loadMain();
-                });
+            if (res.status !== "connected") {
+                return;
+            }
+            facebookConnectPlugin.getAccessToken(function(token) {
+                telerikSignIn(token,
+                    function() {
+                        app.loadMain();
+                    });
+            });
         }, function() {});
     };
 
     signup.withFacebook = function() {
         facebookConnectPlugin.login(['user_friends', 'public_profile', 'email'],
-            function(status) {
-                console.log(JSON.stringify(status));
-                telerikSignIn(status.authResponse.accessToken,
-                    function() {
-                        app.loadMain();
-                    });
+            function(res) {
+                facebookConnectPlugin.getAccessToken(function(token) {
+                    telerikSignIn(token,
+                        function() {
+                            app.loadMain();
+                        });
+                });
             },
             function(err) {
                 console.log(JSON.stringify(err));
