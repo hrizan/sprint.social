@@ -237,19 +237,31 @@ var backgroundtask = (function() {
 
     var backgroundtask = {};
 
-    backgroundtask.get = function (task) {
+    backgroundtask.start = function (task) {
+        setTimeout(task, 10);
+    };
+
+    return backgroundtask;
+}());
+
+var pedometer = (function() {
+    "use strict";
+
+    var pedometer = {};
+
+    pedometer.startPedometerUpdates = function (callback) {
         var total = 0;
 
         var sendDistance = function () {
             total += Math.random * 10;
             setTimeout(function() {
-                task({ "distance": total });
+                callback({ "distance": total });
                 sendDistance();
             }, 500);
         };
     };
 
-    return backgroundtask;
+    return pedometer;
 }());
 
 var nothing = function(){};
