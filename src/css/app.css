@@ -60,6 +60,7 @@ body {
     font-size: 14px;
     font-weight: 300;
     position: absolute;
+    background-color: #444;
 }
 
 input[type="number"], input[type="tel"]{
@@ -101,4 +102,8 @@ input[type="number"], input[type="tel"]{
     display: block;
     width: 40px;
     height: 40px;
+}
+
+.panel {
+    background: #FFF;
 }
