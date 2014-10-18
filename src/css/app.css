@@ -60,7 +60,7 @@ body {
     font-size: 16px;
     font-weight: 300;
     position: absolute;
-    background-color: #444;
+    background-color: #241D1D;
 }
 
 input[type="number"], input[type="tel"]{
@@ -96,7 +96,7 @@ input[type="number"], input[type="tel"]{
 }
 
 .challenge-block .list-group-title {
-    background-color: #95a5a6;
+    background-color: #B2ADA7; /*#f56363; #43C5B8;*/
     color: #fff;
 }
 
@@ -152,7 +152,11 @@ input[type="number"], input[type="tel"]{
 }
 
 .panel {
-    background: #FFF;
+    background: #EDE8E5;
+}
+
+.panel .list-block ul {
+    background: transparent;
 }
 
 #c {
