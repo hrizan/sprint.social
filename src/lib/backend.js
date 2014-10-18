@@ -61,6 +61,10 @@ var telerik = (function() {
         });
     };
 
+    telerik.me = function(token) {
+        return get(authenticatedRequest(token),"Users/me");
+    };
+
 
     return telerik;
 })();

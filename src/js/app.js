@@ -18,6 +18,8 @@ var app = (function () {
         initFramework();
 
         app.userToken = localStorage.getItem("userToken");
+        app.user = localStorage.getItem("user");
+
 
         if (app.userToken) {
             app.loadMain();

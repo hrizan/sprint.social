@@ -5,12 +5,27 @@ var signup = (function() {
 
     var signup = {};
 
+    var telerikSignIn = function(accessToken, succ) {
+        telerik.login(accessToken, function(response) {
+            app.userToken = response.access_token;
+            localStorage.setItem("userToken", app.userToken);
+
+            console.log(JSON.stringify(response));
+            telerik.me(app.userToken, function(user) {
+                app.user = user;
+                localStorage.setItem("user", user);
+                succ(user);
+            }, function() {});
+        }, function() {});
+    };
+
     signup.init = function() {
         facebookConnectPlugin.getLoginStatus(function(status) {
             console.log(status);
-            app.userToken = status.authResponse.accessToken;
-            localStorage.setItem("userToken", app.userToken);
-            app.loadMain();
+            telerikSignIn(status.authResponse.accessToken,
+                function() {
+                    app.loadMain();
+                });
         }, function() {});
     };
 
@@ -18,11 +33,13 @@ var signup = (function() {
         facebookConnectPlugin.login(['user_friends', 'public_profile', 'email'],
             function(status) {
                 console.log(JSON.stringify(status));
-                telerik.login(status.authResponse.accessToken, function(response) {
-                    console.log(JSON.stringify(response));
-                }, function() {});
+                telerikSignIn(status.authResponse.accessToken,
+                function() {
+                    app.loadMain();
+                });
             },
             function(err) {
+
                 console.log(JSON.stringify(err));
             });
     };
