@@ -27,7 +27,8 @@ var main = (function() {
     };
 
     var renderChallenges = function (challenges) {
-        var html = "";
+        var html = "<li class='list-group-title content-center'>" +
+            "<h3>New Challenges!</h3></li>";
 
         fjs.each(function(challenge) {
             var match = fjs.first(function(friend) {
