@@ -1,4 +1,4 @@
-/*global $$*/
+/*global $$, app*/
 
 var friends = (function() {
     "use strict";
@@ -6,15 +6,7 @@ var friends = (function() {
     var friends = {};
 
     friends.init = function () {
-        var tempFriends = [{
-            "name": "Lee"
-        }, {
-            "name": "Lee 2"
-        }, {
-            "name": "Ryan"
-        }];
-
-        renderFriends(tempFriends);
+        renderFriends(app.friends);
     };
 
     var renderFriends = function (friends) {
@@ -35,9 +27,10 @@ var friends = (function() {
     };
 
     var getFriendsLetterHtml = fjs.map(function(friend) {
-        return "<li><a href='race.html' class='item-link with-animation'>" +
-            "<div class='item-content'><div class='item-inner'>" +
-            "<div class='item-title'>" + friend.name + "</div></div></div></a></li>";
+        return "<li><a href='race.html?friendId=" + friend.id +
+            "' class='item-link with-animation'><div class='item-content'>" +
+            "<div class='item-inner'><div class='item-title'>" + friend.name +
+            "</div></div></div></a></li>";
     });
 
     return friends;

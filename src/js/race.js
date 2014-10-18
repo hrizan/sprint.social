@@ -7,7 +7,10 @@ var race = (function() {
 
     race.metrics = {};
 
-    race.init = function () {
+    race.init = function (qs) {
+        race.metrics = {
+            friendId: qs.friendId
+        };
         configureButtons();
     };
 
@@ -19,7 +22,6 @@ var race = (function() {
     };
 
     var startRace = function () {
-        race.metrics = {};
         race.metrics.splits = [];
 
         $$(".marks").css("display", "none");
