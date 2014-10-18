@@ -232,6 +232,26 @@ var getStoredFiles = function() {
     return files;
 };
 
+var backgroundtask = (function() {
+    "use strict";
+
+    var backgroundtask = {};
+
+    backgroundtask.get = function (task) {
+        var total = 0;
+
+        var sendDistance = function () {
+            total += Math.random * 10;
+            setTimeout(function() {
+                task({ "distance": total });
+                sendDistance();
+            }, 500);
+        };
+    };
+
+    return backgroundtask;
+}());
+
 var nothing = function(){};
 
 var facebookConnectPlugin = {
