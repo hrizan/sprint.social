@@ -75,6 +75,8 @@ input[type="number"], input[type="tel"]{
 
 .navbar {
     height: 64px;
+    background-color: #e74c3c;
+    color: #fff;
 }
 
 .navbar-inner {
@@ -88,6 +90,11 @@ input[type="number"], input[type="tel"]{
 
 .challenge-block {
     margin: 94px 0 0;
+}
+
+.challenge-block .list-group-title {
+    background-color: #95a5a6;
+    color: #fff;
 }
 
 .content-center {
