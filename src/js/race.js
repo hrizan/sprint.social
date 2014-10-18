@@ -102,7 +102,10 @@ var race = (function() {
     var submissionSuccess = function (raceResult) {
         app.f7.hidePreloader();
         console.log(raceResult);
-        // TODO show result or whatever
+        if (raceData.raceId) {
+            app.mainView.loadPage("result.html?raceId=" + raceData.raceId);
+        }
+        // TODO show when no result yet
     };
 
     return race;
