@@ -241,7 +241,7 @@ var backgroundtask = (function() {
 
     var backgroundtask = {};
 
-    backgroundtask.start = function (task) {
+    backgroundtask.start = function(task) {
         setTimeout(task, 10);
     };
 
@@ -254,15 +254,17 @@ var pedometer = (function() {
     var pedometer = {};
     var doStop;
 
-    pedometer.startPedometerUpdates = function (callback) {
+    pedometer.startPedometerUpdates = function(callback) {
         var total = 0;
         doStop = false;
 
-        var sendDistance = function () {
+        var sendDistance = function() {
             total += Math.random() * 10;
             setTimeout(function() {
                 console.log(total);
-                callback({ "distance": total });
+                callback({
+                    "distance": total
+                });
                 if (!doStop) {
                     sendDistance();
                 }
@@ -272,7 +274,7 @@ var pedometer = (function() {
         sendDistance();
     };
 
-    pedometer.stopPedometerUpdates = function (callback) {
+    pedometer.stopPedometerUpdates = function(callback) {
         doStop = true;
         if (typeof(callback) === "function") {
             setTimeout(callback, 10);
@@ -282,13 +284,53 @@ var pedometer = (function() {
     return pedometer;
 }());
 
-var nothing = function(){};
+var nothing = function() {};
 
 var facebookConnectPlugin = {
     getAccessToken: nothing,
-    login:  nothing,
+    login: nothing,
     getLoginStatus: nothing
 }
 
-localStorage.setItem("userToken","stubby");
-localStorage.setItem("user",{});
+localStorage.setItem("userToken", JSON.stringify("stubby"));
+localStorage.setItem("user", JSON.stringify({
+    "IsVerified": true,
+    "IdentityProvider": "Facebook",
+    "Identity": {
+        "Facebook": {
+            "id": "10152797785926873",
+            "email": "ryansroberts@gmail.com",
+            "first_name": "Ryan",
+            "gender": "male",
+            "last_name": "Roberts",
+            "link": "https://www.facebook.com/app_scoped_user_id/10152797785926873/",
+            "locale": "en_US",
+            "name": "Ryan Roberts",
+            "timezone": 3,
+            "updated_time": "2014-09-30T23:49:57+0000",
+            "verified": true
+        }
+    },
+    "Email": "ryansroberts@gmail.com",
+    "DisplayName": "Ryan Roberts",
+    "Role": "6c7ed610-5633-11e4-af4d-85398d7b83c5",
+    "CreatedAt": "2014-10-18T11:40:14.634Z",
+    "ModifiedAt": "2014-10-18T11:40:14.634Z",
+    "CreatedBy": "00000000-0000-0000-0000-000000000000",
+    "ModifiedBy": "00000000-0000-0000-0000-000000000000",
+    "Owner": "86ad60a0-56bb-11e4-81d3-4556a19d6583",
+    "Id": "86ad60a0-56bb-11e4-81d3-4556a19d6583",
+    "Meta": {
+        "Permissions": {
+            "CanRead": true,
+            "CanUpdate": true,
+            "CanDelete": true
+        }
+    }
+}));
+localStorage.setItem("friends", JSON.stringify(
+    [{
+        "name": "Lee Crossley",
+        "id": "10152389087085840"
+    }]
+));

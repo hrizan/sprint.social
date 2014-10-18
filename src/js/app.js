@@ -20,7 +20,7 @@ var app = (function() {
     };
 
     app.load = function(k, v) {
-        JSON.parse(localStorage.getItem(k));
+        return JSON.parse(localStorage.getItem(k));
     };
 
 
