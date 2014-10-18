@@ -75,7 +75,10 @@ input[type="number"], input[type="tel"]{
 
 .navbar {
     height: 64px;
-    background-color: #e74c3c;
+    background: -webkit-gradient(linear,
+        left top,right top,
+        color-stop(0%,#36bac2),
+        color-stop(100%,#3cd3ad));
     color: #fff;
 }
 
@@ -128,16 +131,10 @@ input[type="number"], input[type="tel"]{
     padding: 0 15px 0 8px;
 }
 
-.trans-block {
-    background: rgba(255, 255, 255, 0.35);
+.signup-block {
     height: 65%;
-    padding: 1% 5%;
+    padding: 1% 5% 2%;
     margin: 20% 15px;
-}
-
-.runner-background {
-    background-image: url("../img/back.jpg");
-    background-size: cover;
 }
 
 .badge {
