@@ -17,7 +17,6 @@ var main = (function() {
 
     var getSuccess = function (challenges) {
         challenges = JSON.parse(challenges);
-        console.log(challenges.Result);
         if (challenges.Count > 0) {
             renderChallenges(challenges.Result);
         } else {
@@ -32,16 +31,10 @@ var main = (function() {
 
         fjs.each(function(challenge) {
             var match = fjs.first(function(friend) {
-                console.log(friend.id);
-                console.log(challenge.ChallengerId);
                 return friend.id.toString() === challenge.ChallengerId.toString();
             }, app.friends);
 
             if (match) {
-                console.log({
-                    "raceId": challenge.Id,
-                    "friendName": match.name
-                });
                 html += getChallengeHtml(challenge.Id, match.name);
             }
         }, challenges);
