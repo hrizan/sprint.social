@@ -110,7 +110,7 @@ var telerik = (function() {
     telerik.accept = function(token, raceid, racedata, succ, error) {
         var unzipped = unzip(racedata);
 
-        return put(as(token), "Race",raceid, {
+        return put(as(token), "Race", raceid, {
             "ChallengedTime": unzipped[0],
             "ChallengedDistance": unzipped[1]
         }, succ, error);

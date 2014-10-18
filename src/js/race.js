@@ -25,7 +25,7 @@ var race = (function() {
     var startRace = function () {
         raceData.splits = [];
 
-        $$(".marks").css("display", "none");
+        $$(".marks, .finish").css("display", "none");
         $$(".go").css("display", "block");
 
         startBackgroundTask();
@@ -37,7 +37,7 @@ var race = (function() {
 
     var showRetry = function () {
         $$(".marks").css("display", "block");
-        $$(".go").css("display", "none");
+        $$(".go, .finish").css("display", "none");
     };
 
     var finishRace = function () {
