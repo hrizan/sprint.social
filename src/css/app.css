@@ -77,10 +77,6 @@ input[type="number"], input[type="tel"]{
     padding: 2px 15px;
 }
 
-.page, .page-content {
-    background: #f7f7f7;
-}
-
 .content-block {
     margin: 64px 0 0;
     padding: 2px 15px;

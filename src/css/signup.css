@@ -19,12 +19,15 @@
 
 .page.signup a.signup {
     border-radius: 0;
-    border: 1px solid #FFF;
     color: #FFF;
-    background: transparent;
+    background-image: -webkit-linear-gradient(#3b5998, #314b83);
     margin: 96px 15px 0px 15px;
+    border: solid 1px #283e6b;
+    box-shadow: inset 0px 1px rgba(255,255,255,0.2);
+    text-shadow: 0px 1px rgba(0,0,0,0.4);
+    font-weight: 500;
 }
 
 .page.signup a.signup.active-state {
-    background: rgba(255, 255, 255, 0.1);
+    box-shadow: inset 0px 5px 15px rgba(0,0,0,0.3), 0px 1px rgba(255,255,255,0.2);
 }
