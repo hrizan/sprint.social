@@ -9,7 +9,11 @@ var telerik = (function() {
     };
 
     var anonRequest = function() {
-        return new XMLHttpRequest();
+        var request = anonRequest();
+
+        request.setRequestHeader("Authorization", "");
+
+        return request;
     };
 
     var authenticatedRequest = function(token) {
@@ -38,7 +42,7 @@ var telerik = (function() {
 
     var post = function(request, service, params, succ, error) {
         request.open("POST", serviceUri(service), true);
-        request.setRequestHeader("Content-Type", "");
+        request.setRequestHeader("Content-Type", "application/json");
 
         request.onload = request.ontimeout = function() {
             if (request.status >= 200 && request.status < 400) {
