@@ -27,19 +27,6 @@ var app = (function() {
         }
 
         setTimeout(hideSplash, 500);
-
-        /*backgroundtask.start(function() {
-            var stringthing = "";
-            var onPedometer = function (pedometerData) {
-                stringthing = new Date() + "<br/>" + pedometerData.distance;
-                document.body.innerHTML = stringthing;
-                if (pedometerData.distance >= 0) {
-                    navigator.vibrate(3000);
-                    navigator.notification.beep(3);
-                }
-            };
-            pedometer.startPedometerUpdates(onPedometer);
-        });*/
     };
 
     app.preInit = function() {
