@@ -10,6 +10,7 @@ var race = (function() {
     race.init = function (qs) {
         raceData = {
             friendId: qs.friendId,
+            raceId: qs.raceId,
             userId: app.user.Identity.Facebook.id
         };
         configureButtons();
@@ -78,8 +79,12 @@ var race = (function() {
         if (i && i === 2) {
             return;
         }
+
         app.f7.showPreloader("Submitting...");
-        telerik.challenge(app.userToken, raceData,
+
+        var method = raceData.raceId ? "accept" : "challenge";
+
+        telerik[method](app.userToken, raceData,
             submissionSuccess, submissionFailed);
     };
 
@@ -89,8 +94,9 @@ var race = (function() {
             submitResult, "Sprint Social", ["OK", "Cancel"]);
     };
 
-    var submissionSuccess = function () {
+    var submissionSuccess = function (raceResult) {
         app.f7.hidePreloader();
+        console.log(raceResult);
         // TODO show result or whatever
     };
 
