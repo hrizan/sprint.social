@@ -159,9 +159,9 @@ input[type="number"], input[type="tel"]{
 }
 
 #c {
-    width:100%;
-    height:100%;
-    margin: 15px;
+    width:375px;
+    height:610px;
+    margin-top:60px;
 }
 
 .vertical-align-ish a.button {
