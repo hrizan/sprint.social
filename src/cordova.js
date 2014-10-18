@@ -18,7 +18,6 @@ window.cordova = (function() {
                 loaded = function() {
                     document.removeEventListener("DOMContentLoaded", loaded, false);
                     window.removeEventListener("load", loaded, false);
-                    data.url = "http://localhost:2010";
                     handler();
                 };
                 document.addEventListener("DOMContentLoaded", loaded, false);
@@ -28,14 +27,12 @@ window.cordova = (function() {
                     if (document.readyState === "complete") {
                         document.detachEvent("onreadystatechange", loaded);
                         window.detachEvent("onload", loaded);
-                        data.url = "http://localhost:2010";
                         handler();
                     }
                 };
                 document.attachEvent("onreadystatechange", loaded);
                 window.attachEvent("onload", loaded);
             } else if (document.readyState === "complete") {
-                data.url = "http://localhost:2010";
                 setTimeout(handler, 1);
             }
         } else {
