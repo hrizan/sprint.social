@@ -73,6 +73,14 @@ input[type="number"], input[type="tel"]{
     display: none!important;
 }
 
+.navbar {
+    height: 64px;
+}
+
+.navbar-inner {
+    padding: 20px 0 0;
+}
+
 .content-block {
     margin: 64px 0 0;
     padding: 2px 15px;
