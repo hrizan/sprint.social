@@ -70,11 +70,8 @@ var telerik = (function() {
 
     telerik.syncFriends = function(token, succ, error) {
         facebookConnectPlugin.api("/me/friends", ["user_friends"], function(res) {
-            console.log(res);
-            app.friends  = res.data;
-            localStorage.setItem("friends",app.friends);
-
-        }, function() {});
+            succ(res);
+        },error);
     };
 
 

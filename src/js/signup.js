@@ -5,18 +5,27 @@ var signup = (function() {
 
     var signup = {};
 
+    var syncFriends = function(token, succ, error) {
+        facebookConnectPlugin.api("/me/friends", ["user_friends"], function(res) {
+            console.log(res);
+            app.store("friends", app.friends = res.data);
+            succ(app.friends);
+        }, error);
+    };
+
     var telerikSignIn = function(accessToken, succ) {
         telerik.login(accessToken, function(response) {
-            
             response = JSON.parse(response);
-            app.userToken = response.Result.access_token;
-            localStorage.setItem("userToken", app.userToken);
-            
+
+            app.store("userToken", app.userToken = response.Result.access_token);
+
             telerik.me(app.userToken, function(user) {
                 user = JSON.parse(user);
-                app.user = user;
-                localStorage.setItem("user", user.Result);
-                telerik.syncFriends(app.userToken,succ);
+
+                app.store("user", app.user = user.Result);
+                syncFriends(app.userToken, function(friends) {
+                    succ(friends);
+                });
             }, function() {});
         }, function() {});
     };
