@@ -4,20 +4,23 @@ var result = (function() {
 
     var result = {};
 
-
+    var loadRace = function(id,cb){
+        if(!id){
+            cb(race.data);
+        }
+        else{
+            telerik.race(app.userToken,id,cb);
+        }
+    };
 
     result.init = function() {
-        result.replay(race.metrics.splits);
+        var id = window.location.search; 
+        loadRace(id,result.replay);
     };
 
     var scaleTo = function(s, e) {
         var f = s / 100;
         return e * f;
-    };
-
-
-    result.loadRace = function(id){
-        
     };
 
     var handleComplete = function(tween) {
@@ -42,7 +45,6 @@ var result = (function() {
         ball.graphics.endStroke();
         ball.x = c.width / 3;
         ball.y = 10;
-
 
         var tween = createjs.Tween.get(ball, {
             loop: false
