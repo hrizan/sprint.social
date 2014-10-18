@@ -37,22 +37,23 @@ var main = (function() {
             }, app.friends);
 
             if (match) {
-                html = getChallengeHtml({
+                console.log({
                     "raceId": challenge.Id,
                     "friendName": match.name
                 });
+                html += getChallengeHtml(challenge.Id, match.name);
             }
         }, challenges);
 
         $$("#challenges").html("<ul>" + html + "</ul>");
     };
 
-    var getChallengeHtml = fjs.map(function(challenge) {
-        return "<li><a href='race.html?raceId=" + challenge.raceId +
+    var getChallengeHtml = function (raceId, friendName) {
+        return "<li><a href='race.html?raceId=" + raceId +
             "' class='item-link with-animation'><div class='item-content'>" +
-            "<div class='item-inner'><div class='item-title'>" + challenge.friendName +
+            "<div class='item-inner'><div class='item-title'>" + friendName +
             "</div></div></div></a></li>";
-    });
+    };
 
     return main;
 })();
