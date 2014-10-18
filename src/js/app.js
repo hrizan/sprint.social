@@ -1,4 +1,4 @@
-/*global Dom7, StatusBar, signup, plugins, backgroundtask, pedometer */
+/*global localStorage, Dom7, StatusBar, signup, plugins, backgroundtask, pedometer */
 
 var $$ = Dom7;
 

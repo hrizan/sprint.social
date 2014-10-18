@@ -20,6 +20,11 @@ var signup = (function() {
     };
 
     signup.init = function() {
+
+        if(typeof(facebookConnectPlugin) === 'undefined'){
+            app.userToken = "stubby";
+            app.user = {};
+        }
         facebookConnectPlugin.getLoginStatus(function(status) {
             console.log(status);
             telerikSignIn(status.authResponse.accessToken,
@@ -39,7 +44,6 @@ var signup = (function() {
                 });
             },
             function(err) {
-
                 console.log(JSON.stringify(err));
             });
     };
