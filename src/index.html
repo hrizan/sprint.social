@@ -10,8 +10,22 @@
         <!-- build:remove -->
         <link rel="stylesheet" type="text/css" href="css/signup.css" />
         <!-- /build -->
+        <script>
+        window.onerror = function (message, file, line) {
+            console.log("Error in Application: " +
+            message + ". Source File: " + file + ", Line: " + line);
+        };
+        </script>
     </head>
     <body>
+        <div class="panel-overlay"></div>
+        <div class="panel panel-left">
+            <div class="content-block">
+                <p><a href="#">New Challenge</a></p>
+                <p><a href="#">Solo Sprint</a></p>
+                <p><a href="#">Results</a></p>
+            </div>
+        </div>
         <div class="views">
             <div class="view view-signup hidden-navbar">
                 <div class="pages">

@@ -32,6 +32,7 @@ var signup = (function() {
         }, function() {});
     };
 
+
     signup.withFacebook = function() {
         facebookConnectPlugin.login(['user_friends', 'public_profile', 'email'],
             function(res) {

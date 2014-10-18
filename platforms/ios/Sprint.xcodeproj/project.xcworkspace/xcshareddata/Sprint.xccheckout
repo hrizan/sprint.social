@@ -5,13 +5,13 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>EF3F8621-29EA-42CF-AA39-290A59E3EC8C</string>
+	<string>4A47630E-EE3B-43DC-90F8-D66EA0D38A28</string>
 	<key>IDESourceControlProjectName</key>
 	<string>Sprint</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>A4F297A5B9BD5FB08EB1E9A3CAA256AF2D8069B4</key>
-		<string>https://github.com/leecrossley/sprint.social</string>
+		<string>https://github.com/leecrossley/sprint.social.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>platforms/ios/Sprint.xcodeproj</string>
@@ -21,7 +21,7 @@
 		<string>../../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/leecrossley/sprint.social</string>
+	<string>https://github.com/leecrossley/sprint.social.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
@@ -34,7 +34,7 @@
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>A4F297A5B9BD5FB08EB1E9A3CAA256AF2D8069B4</string>
 			<key>IDESourceControlWCCName</key>
-			<string>sprint.social</string>
+			<string>sprintsocial</string>
 		</dict>
 	</array>
 </dict>

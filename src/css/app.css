@@ -77,13 +77,16 @@ input[type="number"], input[type="tel"]{
     padding: 2px 15px;
 }
 
-.page, .page-content {
-    background: #f7f7f7;
+.trans-block {
+    background: rgba(255, 255, 255, 0.35);
+    height: 65%;
+    padding: 5%;
+    margin: 25% 15px;
 }
 
-.content-block {
-    margin: 64px 0 0;
-    padding: 2px 15px;
+.runner-background {
+    background-image: url("../img/back.jpg");
+    background-size: cover;
 }
 
 .badge {
