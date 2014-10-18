@@ -164,3 +164,27 @@ input[type="number"], input[type="tel"]{
 .vertical-align-ish {
     margin-top: 25%;
 }
+
+i.icon-challenge {
+    width: 30px;
+    height: 30px;
+    background: url("../img/challenge.svg") 50% 50% / 26px 26px no-repeat;
+}
+
+i.icon-feedback {
+    width: 30px;
+    height: 30px;
+    background: url("../img/feedback.svg") 50% 50% / 26px 26px no-repeat;
+}
+
+i.icon-results {
+    width: 30px;
+    height: 30px;
+    background: url("../img/results.svg") 50% 50% / 26px 26px no-repeat;
+}
+
+i.icon-solo {
+    width: 30px;
+    height: 30px;
+    background: url("../img/solo.svg") 50% 50% / 26px 26px no-repeat;
+}
