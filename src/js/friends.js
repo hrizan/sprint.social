@@ -6,12 +6,18 @@ var friends = (function() {
     var friends = {};
 
     friends.init = function () {
-        // TODO renderFriends();
+        var tempFriends = [{
+            "name": "Lee"
+        }, {
+            "name": "Ryan"
+        }];
+
+        renderFriends(tempFriends);
     };
 
     var renderFriends = function (friends) {
-        var grouped = fjs.group(function(c) {
-            return c.name.toUpperCase().charAt(0);
+        var grouped = fjs.group(function(friend) {
+            return friend.name.toUpperCase().charAt(0);
         }, friends);
 
         var html = "";
@@ -28,7 +34,7 @@ var friends = (function() {
 
     var getFriendsLetterHtml = fjs.map(function(friend) {
         return "<li><a href='#' class='item-link'><div class='item-content'>" +
-            "</div><div class='item-inner'><div class='item-title'>" +
+            "<div class='item-inner'><div class='item-title'>" +
             friend.name + "</div></div></div></a></li>";
     });
 
