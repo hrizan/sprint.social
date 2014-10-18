@@ -35,9 +35,9 @@ var friends = (function() {
     };
 
     var getFriendsLetterHtml = fjs.map(function(friend) {
-        return "<li><a href='#' class='item-link'><div class='item-content'>" +
-            "<div class='item-inner'><div class='item-title'>" +
-            friend.name + "</div></div></div></a></li>";
+        return "<li><a href='race.html' class='item-link with-animation'>" +
+            "<div class='item-content'><div class='item-inner'>" +
+            "<div class='item-title'>" + friend.name + "</div></div></div></a></li>";
     });
 
     return friends;

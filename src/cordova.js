@@ -78,6 +78,10 @@ navigator.notification = (function() {
         console.log("navigator.notification.vibrate()");
     };
 
+    notification.beep = function(count) {
+        console.log("navigator.notification.beep('" + count + "')");
+    };
+
     return notification;
 }());
 
@@ -231,6 +235,52 @@ var getStoredFiles = function() {
     }
     return files;
 };
+
+var backgroundtask = (function() {
+    "use strict";
+
+    var backgroundtask = {};
+
+    backgroundtask.start = function (task) {
+        setTimeout(task, 10);
+    };
+
+    return backgroundtask;
+}());
+
+var pedometer = (function() {
+    "use strict";
+
+    var pedometer = {};
+    var doStop;
+
+    pedometer.startPedometerUpdates = function (callback) {
+        var total = 0;
+        doStop = false;
+
+        var sendDistance = function () {
+            total += Math.random() * 10;
+            setTimeout(function() {
+                console.log(total);
+                callback({ "distance": total });
+                if (!doStop) {
+                    sendDistance();
+                }
+            }, 500);
+        };
+
+        sendDistance();
+    };
+
+    pedometer.stopPedometerUpdates = function (callback) {
+        doStop = true;
+        if (typeof(callback) === "function") {
+            setTimeout(callback, 10);
+        }
+    };
+
+    return pedometer;
+}());
 
 var nothing = function(){};
 
