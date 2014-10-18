@@ -32,10 +32,13 @@ var signup = (function() {
         }, function() {});
     };
 
+
     signup.withFacebook = function() {
         facebookConnectPlugin.login(['user_friends', 'public_profile', 'email'],
             function(res) {
+                console.log(res);
                 facebookConnectPlugin.getAccessToken(function(token) {
+                    console.log(token);
                     telerikSignIn(token,
                         function() {
                             app.loadMain();

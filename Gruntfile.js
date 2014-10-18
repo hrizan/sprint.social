@@ -110,5 +110,5 @@ module.exports = function (grunt) {
 
     grunt.registerTask("default", ["connect", "watch"]);
     grunt.registerTask("build", ["jshint", "clean:www", "copy", "clean:stub",
-        "uglify", "cssmin", "processhtml", "clean:js", "clean:css", "imageEmbed", "shell"]);
+         "cssmin", "processhtml",  "clean:css", "imageEmbed", "shell"]);
 };
