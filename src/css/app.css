@@ -153,11 +153,10 @@ input[type="number"], input[type="tel"]{
     margin: 15px;
 }
 
-.start {
+.vertical-align-ish a.button {
     margin-top: 96px;
 }
 
-.vertical-align {
-    top: 50%;
-    position: relative;
+.vertical-align-ish {
+    margin-top: 25%;
 }

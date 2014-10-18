@@ -6,12 +6,16 @@ var race = (function() {
     var race = {};
 
     race.init = function () {
-        setAlignment();
+        configureStart();
     };
 
-    var setAlignment = function () {
-        var targetTop = (- $$(".vertical-align").height() / 2) + "px";
-        $$(".vertical-align").css("margin-top", targetTop);
+    var configureStart = function () {
+        $$(".start").on("click", startRace);
+    };
+
+    var startRace = function () {
+        $$(".marks").css("display", "none");
+        $$(".go").css("display", "block");
     };
 
     return race;
