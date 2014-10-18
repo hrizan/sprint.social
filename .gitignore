@@ -3,7 +3,7 @@
 ._.DS_Store
 ._*
 .com.apple.timemachine.supported
-
+<div class="panel-overlay"></div>
 # Node ignores
 lib-cov
 *.seed
