@@ -287,7 +287,14 @@ var facebookConnectPlugin = {
     getAccessToken: nothing,
     login: nothing,
     getLoginStatus: nothing
-}
+};
+
+plugins.EqatecAnalytics = {
+    Factory: {
+        CreateSettings: nothing,
+        CreateMonitorWithSettings: nothing
+    }
+};
 
 localStorage.setItem("userToken", JSON.stringify("7bFWVC9bH9eX83hE90OW2OVdD3qqQZSfk4QbN3zT04inHXSbsl3biiAIYkaPCu4lH08N1tcO5BaDgdGJv2QNYic2raJooHZPXFbZHMLrMBd9ZnjEhxZ9ooHC8KU8pGL0WpZ88EjzAo5Ko9LF60492hhYJrL0xaCNHTUxY1doh4G0xsNTdu7R0UaaVDnEw7OMdm3UNrJpMcrpH2P0LOaUdWSW7T2aoEEuhovkKrKSeZa7DATKpmWhzu0rvurDU3U0"));
 localStorage.setItem("user", JSON.stringify({

@@ -58,6 +58,12 @@
                             "xml": "true",
                             "count": 1
                         }
+                    ],
+                    "libstdc++.dylib": [
+                        {
+                            "xml": "false",
+                            "count": 1
+                        }
                     ]
                 }
             },
@@ -135,6 +141,10 @@
                         {
                             "xml": "<access origin=\"https://*.akamaihd.net\" />",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"EqatecAnalytics\"><param name=\"ios-package\" value=\"EqatecAnalyticsPlugin\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -194,6 +204,9 @@
         "com.phonegap.plugins.facebookconnect": {
             "APP_ID": "327240324128956",
             "APP_NAME": "Sprint Social",
+            "PACKAGE_NAME": "social.sprint"
+        },
+        "com.telerik.plugin.telerikanalytics": {
             "PACKAGE_NAME": "social.sprint"
         }
     },

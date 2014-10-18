@@ -79,4 +79,7 @@
     <preference name="StatusBarStyle" value="lightcontent" />
     <preference name="BackupWebStorage" value="none" />
     <preference name="Orientation" value="portrait" />
+    <feature name="EqatecAnalytics">
+        <param name="ios-package" value="EqatecAnalyticsPlugin" />
+    </feature>
 </widget>

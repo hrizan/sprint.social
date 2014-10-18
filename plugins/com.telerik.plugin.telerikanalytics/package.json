@@ -1,0 +1,22 @@
+{
+    "version": "3.2.124",
+    "name": "com.telerik.plugin.telerikanalytics",
+    "cordova_name": "Telerik Analytics",
+    "description": "The official plugin for Telerik Analytics",
+    "license": "Apache 2.0 License",
+    "keywords": [
+        "telerik",
+        "analytics"
+    ],
+    "platforms": [
+        "android",
+        "ios",
+        "wp8"
+    ],
+    "engines": [
+        {
+            "name": "cordova",
+            "version": ">=3.0.0"
+        }
+    ]
+}

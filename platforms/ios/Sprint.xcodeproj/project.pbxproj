@@ -57,6 +57,9 @@
 		86788F8D2E804F069BA9EA05 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 957E070A60234E1DAF90C7D0 /* Accounts.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		A3A47E2DB46242F6A709EE00 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32AADA65101340CF95F82540 /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		4174D0F895C0418FA2C29CF7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04906760218543F7B83CFA8C /* Security.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		21306FE407A04416BA86E8C5 /* EqatecAnalyticsPlugin.mm in Resources */ = {isa = PBXBuildFile; fileRef = CC1DB17A0C5A45DE805C4647 /* EqatecAnalyticsPlugin.mm */; };
+		8087436919044D989D6F8CD0 /* libEQATECAnalyticsMonitoriOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0937C95B12014E5EA1E29B35 /* libEQATECAnalyticsMonitoriOS.a */; };
+		CD4B420353CF4C9FAFCC1B32 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7513127CE531493183EEDF53 /* libstdc++.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -151,6 +154,11 @@
 		957E070A60234E1DAF90C7D0 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "Accounts.framework"; path = "System/Library/Frameworks/Accounts.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
 		32AADA65101340CF95F82540 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "AdSupport.framework"; path = "System/Library/Frameworks/AdSupport.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
 		04906760218543F7B83CFA8C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "Security.framework"; path = "System/Library/Frameworks/Security.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
+		CC1DB17A0C5A45DE805C4647 /* EqatecAnalyticsPlugin.mm */ = {isa = PBXFileReference; lastKnownFileType = unknown; name = "EqatecAnalyticsPlugin.mm"; path = "com.telerik.plugin.telerikanalytics/EqatecAnalyticsPlugin.mm"; sourceTree = "<group>"; fileEncoding = 4; };
+		0937C95B12014E5EA1E29B35 /* libEQATECAnalyticsMonitoriOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libEQATECAnalyticsMonitoriOS.a"; path = "Sprint/Plugins/com.telerik.plugin.telerikanalytics/libEQATECAnalyticsMonitoriOS.a"; sourceTree = "<group>"; fileEncoding = 4; };
+		D9102BE269C14E01A67F5896 /* EqatecAnalyticsPlugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "EqatecAnalyticsPlugin.h"; path = "com.telerik.plugin.telerikanalytics/EqatecAnalyticsPlugin.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		CE0B402A00794DA89C00954E /* EQATECAnalyticsMonitor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "EQATECAnalyticsMonitor.h"; path = "com.telerik.plugin.telerikanalytics/EQATECAnalyticsMonitor.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		7513127CE531493183EEDF53 /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; fileEncoding = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +178,8 @@
 				86788F8D2E804F069BA9EA05 /* Accounts.framework in Frameworks */,
 				A3A47E2DB46242F6A709EE00 /* AdSupport.framework in Frameworks */,
 				4174D0F895C0418FA2C29CF7 /* Security.framework in Frameworks */,
+				8087436919044D989D6F8CD0 /* libEQATECAnalyticsMonitoriOS.a in Frameworks */,
+				CD4B420353CF4C9FAFCC1B32 /* libstdc++.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,6 +281,8 @@
 				957E070A60234E1DAF90C7D0 /* Accounts.framework */,
 				32AADA65101340CF95F82540 /* AdSupport.framework */,
 				04906760218543F7B83CFA8C /* Security.framework */,
+				0937C95B12014E5EA1E29B35 /* libEQATECAnalyticsMonitoriOS.a */,
+				7513127CE531493183EEDF53 /* libstdc++.dylib */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -308,6 +320,9 @@
 				4DD1361DA93F40078E6499AE /* Pedometer.h */,
 				91413AE86E034F209D6102AA /* FacebookConnectPlugin.m */,
 				38C3F81321CE4558887C9E76 /* FacebookConnectPlugin.h */,
+				CC1DB17A0C5A45DE805C4647 /* EqatecAnalyticsPlugin.mm */,
+				D9102BE269C14E01A67F5896 /* EqatecAnalyticsPlugin.h */,
+				CE0B402A00794DA89C00954E /* EQATECAnalyticsMonitor.h */,
 			);
 			name = Plugins;
 			path = "Sprint/Plugins";
@@ -514,6 +529,7 @@
 				D5866D9E91474EE9B29C1A81 /* BackgroundTask.m in Sources */,
 				4D1BD261B0124AAA8BFCE363 /* Pedometer.m in Sources */,
 				68E75DD4A3D5476EB50410A7 /* FacebookConnectPlugin.m in Sources */,
+				21306FE407A04416BA86E8C5 /* EqatecAnalyticsPlugin.mm in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -598,6 +614,10 @@
 					"\"Sprint/Plugins/com.phonegap.plugins.facebookconnect\"",
 					"\"Sprint/Plugins/com.phonegap.plugins.facebookconnect\"",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Sprint/Plugins/com.telerik.plugin.telerikanalytics\"",
+				);
 			};
 			name = Debug;
 		};
@@ -633,6 +653,10 @@
 					"$(inherited)",
 					"\"Sprint/Plugins/com.phonegap.plugins.facebookconnect\"",
 					"\"Sprint/Plugins/com.phonegap.plugins.facebookconnect\"",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Sprint/Plugins/com.telerik.plugin.telerikanalytics\"",
 				);
 			};
 			name = Release;
