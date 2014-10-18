@@ -101,7 +101,8 @@ var telerik = (function() {
         return post(as(token), "Race", {
             "ChallengerTime": unzipped[0],
             "ChallengerDistance": unzipped[1],
-            "ChallengedId": raceData.friendId
+            "ChallengedId": raceData.friendId,
+            "ChallengerId": raceData.userId
         }, succ, error);
     };
 

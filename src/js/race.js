@@ -9,7 +9,8 @@ var race = (function() {
 
     race.init = function (qs) {
         raceData = {
-            friendId: qs.friendId
+            friendId: qs.friendId,
+            userId: app.user.Identity.Facebook.id
         };
         configureButtons();
     };
