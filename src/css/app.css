@@ -77,6 +77,13 @@ input[type="number"], input[type="tel"]{
     padding: 2px 15px;
 }
 
+.trans-block {
+    background: rgba(255, 255, 255, 0.35);
+    height: 65%;
+    padding: 5%;
+    margin: 25% 15px;
+}
+
 .runner-background {
     background-image: url("../img/back.jpg");
     background-size: cover;
