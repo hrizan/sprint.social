@@ -9,6 +9,8 @@ var friends = (function() {
         var tempFriends = [{
             "name": "Lee"
         }, {
+            "name": "Lee 2"
+        }, {
             "name": "Ryan"
         }];
 
