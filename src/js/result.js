@@ -4,18 +4,17 @@ var result = (function() {
 
     var result = {};
 
-    var loadRace = function(id,cb){
-        if(!id){
-            cb(race.data);
-        }
-        else{
-            telerik.race(app.userToken,id,cb);
+    var loadRace = function(id, cb) {
+        if (!id) {
+            cb(race.data.splits, []);
+        } else {
+            telerik.race(app.userToken, id, cb);
         }
     };
 
     result.init = function() {
-        var id = window.location.search; 
-        loadRace(id,result.replay);
+        var id = window.location.search;
+        loadRace(id, result.replay);
     };
 
     var scaleTo = function(s, e) {
@@ -23,45 +22,60 @@ var result = (function() {
         return e * f;
     };
 
-    var handleComplete = function(tween) {
-        var ball = tween._target;
-    };
 
-    result.replay = function(rx, ry) {
-        var c = document.getElementById("c");
-
-        var stage = new createjs.Stage(c);
-        stage.autoClear = true;
-
+    var runner = function(c) {
         var ball = new createjs.Shape();
-        ball.graphics.setStrokeStyle(1, 'round', 'round');
+        ball.graphics.setStrokeStyle(2, 'round', 'round');
         ball.graphics.beginStroke(('#000000'));
-        ball.graphics.beginFill("#FF0000").drawCircle(0, 0, 5);
+        ball.graphics.beginFill("#FF0000").drawCircle(0, 0, 10);
         ball.graphics.endStroke();
         ball.graphics.endFill();
         ball.graphics.setStrokeStyle(1, 'round', 'round');
         ball.graphics.beginStroke(('#000000'));
 
         ball.graphics.endStroke();
-        ball.x = c.width / 3;
-        ball.y = 10;
+        ball.x =
+            ball.y = 10;
 
-        var tween = createjs.Tween.get(ball, {
+        return ball;
+    };
+
+    var tweenfor = function(runner, rx, c) {
+        var tween = createjs.Tween.get(runner, {
             loop: false
         });
-        
-        var rxd =  10000 / (rx[rx.length - 1].timeStamp - rx[0].timeStamp);
-        
-        var time = rx[0].timeStamp;
-        for (var i = 0; i !== rx.length; i = i + 1) {
+
+        var rxd = 10000 / (rx[rx.length - 1].timeStamp - rx[0].timeStamp);
+
+        for (var i = 1; i !== rx.length - 1; i = i + 1) {
             tween = tween.to({
-                x: ball.x,
-                y: scaleTo(c.height, rx[i].distance)
-            }, rxd * (rx[i].timeStamp));
-            time = rx[i].timeStamp;
+                x: runner.x,
+                y: scaleTo(c.height, rx[i + 1].distance)
+            }, rxd * (rx[i + 1].timeStamp - rx[i].timeStamp));
+        }
+    };
+
+
+    result.replay = function(c1, c2) {
+        var c = document.getElementById("c");
+
+        var stage = new createjs.Stage(c);
+        stage.autoClear = true;
+
+        var c1x = c.width / 3;
+        if (!c2.length) {
+            c1x = c.width / 2;
         }
 
-        stage.addChild(ball);
+        var challenger = runner(c, c1x);
+        tweenfor(challenger, c1, c);
+        stage.addChild(challenger);
+
+        if (c2.length) {
+            var challengee = runner(c, 2 * (c.width / 3));
+            tweenfor(challengee, c2, c);
+            stage.addChild(challengee);
+        }
 
         createjs.Ticker.addEventListener("tick", stage);
 
