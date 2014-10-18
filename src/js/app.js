@@ -19,6 +19,7 @@ var app = (function() {
 
         app.userToken = localStorage.getItem("userToken");
         app.user = localStorage.getItem("user");
+        app.friends = localStorage.getItem("friends");
 
         if (app.userToken) {
             app.loadMain();
