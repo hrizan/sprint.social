@@ -107,10 +107,10 @@ var telerik = (function() {
     };
 
     telerik.myChallenges = function(token, facebookId, succ, error) {
-        return get(as(token, {
+        return get(as(token), {
             "ChallengedDistance": null,
             "ChallengedId": facebookId
-        }), "Race", succ, error);
+        }, "Race", succ, error);
     };
 
     telerik.accept = function(token, raceData, succ, error) {
@@ -120,6 +120,10 @@ var telerik = (function() {
             "ChallengedTime": unzipped[0],
             "ChallengedDistance": unzipped[1]
         }, succ, error);
+    };
+
+    telerik.race = function(token,raceId,succ,error) {
+        return get(as(token),"Race/" + raceId,succ,error);
     };
 
     return telerik;
