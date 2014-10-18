@@ -109,7 +109,7 @@ var app = (function() {
         var name = e.detail.page.name;
 
         if (window[name] && typeof(window[name].init) === "function") {
-            // TODO app builder analytics
+            app.trackFeature("Page." + name.charAt(0).toUpperCase() + name.slice(1));
             return window[name].init(e.detail.page.query);
         }
     };
