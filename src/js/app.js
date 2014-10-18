@@ -2,9 +2,6 @@
 
 var $$ = Dom7;
 
-var data = {};
-data.url = "TODO";
-
 var app = (function() {
 
     "use strict";

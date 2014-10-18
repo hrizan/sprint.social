@@ -15,6 +15,11 @@ var result = (function() {
         return e * f;
     };
 
+
+    result.loadRace = function(id){
+        
+    };
+
     var handleComplete = function(tween) {
         var ball = tween._target;
     };

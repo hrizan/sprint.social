@@ -8,16 +8,18 @@ var telerik = (function() {
         return "http://api.everlive.com/v1/Cpz7JJXyDcIJPbOl/" + service;
     };
 
-
     var anon = function(req) {
         req.setRequestHeader("Authorization", null);
     };
-    var as = function(tok) {
+
+    var as = function(tok, filter) {
         return function(req) {
             req.setRequestHeader("Authorization", "Bearer " + tok);
+            if (filter) {
+                req.setRequestHeader("X-Everlive-Filter", JSON.stringify(filter));
+            }
         };
     };
-
 
     var get = function(auth, service, succ, error) {
         var request = new XMLHttpRequest();
@@ -36,8 +38,6 @@ var telerik = (function() {
 
         request.send();
     };
-    
-
 
     var update = function(method,auth,service, params, succ, error) {
         var request = new XMLHttpRequest();
@@ -67,8 +67,6 @@ var telerik = (function() {
         update("PUT",auth,service + "/" + id,params,succ,error);
     };
 
-
-
     telerik.login = function(token, succ, error) {
         return post(anon, "Users", {
             "Identity": {
@@ -87,32 +85,46 @@ var telerik = (function() {
         var l = [],
             r = [];
 
+        pairs = pairs.splits;
+
         for (var i = 0; i !== pairs.length; i = i + 1) {
             l.push(pairs[i].timeStamp);
             r.push(pairs[i].distance);
         }
 
-        return [r, l];
+        return [l, r];
     };
 
-    telerik.challenge = function(token, racedata, succ, error) {
-        var unzipped = unzip(racedata);
+    telerik.challenge = function(token, raceData, succ, error) {
+        var unzipped = unzip(raceData);
 
         return post(as(token), "Race", {
             "ChallengerTime": unzipped[0],
-            "ChallengerDistance": unzipped[1]
+            "ChallengerDistance": unzipped[1],
+            "ChallengedId": raceData.friendId,
+            "ChallengerId": raceData.userId
         }, succ, error);
     };
 
-    telerik.accept = function(token,raceid,racedata,succ,error) {
-        var unzipped = unzip(racedata);
+    telerik.myChallenges = function(token, facebookId, succ, error) {
+        return get(as(token), {
+            "ChallengedDistance": null,
+            "ChallengedId": facebookId
+        }, "Race", succ, error);
+    };
 
-        return put(as(token), "Race",raceid, {
+    telerik.accept = function(token, raceData, succ, error) {
+        var unzipped = unzip(raceData);
+
+        return put(as(token), "Race", raceData.raceId, {
             "ChallengedTime": unzipped[0],
             "ChallengedDistance": unzipped[1]
         }, succ, error);
     };
 
+    telerik.race = function(token,raceId,succ,error) {
+        return get(as(token),"Race/" + raceId,succ,error);
+    };
 
     return telerik;
 })();
