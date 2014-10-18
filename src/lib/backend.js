@@ -38,7 +38,7 @@ var telerik = (function() {
 
     var post = function(request, service, params, succ, error) {
         request.open("POST", serviceUri(service), true);
-        request.setRequestHeader("Content-Type", "application/json");
+        request.setRequestHeader("Content-Type", "");
 
         request.onload = request.ontimeout = function() {
             if (request.status >= 200 && request.status < 400) {
@@ -55,12 +55,14 @@ var telerik = (function() {
 
     telerik.login = function(token, succ, error) {
         return post(anonRequest(), "Users", {
-            Identity: {
+            "Identity": {
                 "Provider": "Facebook",
                 "Token": token
             }
         }, succ, error);
     };
+
+
 
     telerik.me = function(token, succ, error) {
         return get(authenticatedRequest(token), "Users/me", succ, error);

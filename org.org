@@ -1,0 +1,17 @@
+:PROPERTIES:
+#+property: board-name Sprint Social
+#+property: board-id 54422dc067f64aaeb5f8dd2f
+#+PROPERTY: Done 54422dd5bcbcd377983fe9b5
+#+PROPERTY: Doing 54422dd4fca3db3329062caa
+#+PROPERTY: TODO 54422dd2d14eff9edaff9bc6
+#+TODO: TODO Doing | Done 
+#+PROPERTY: orgtrello-user-ryanroberts 4e7277822b4c8edee52dba43
+#+PROPERTY: orgtrello-user-leecrossley 4f741155a768e92f7f272524
+#+PROPERTY: :yellow 
+#+PROPERTY: :red 
+#+PROPERTY: :purple 
+#+PROPERTY: :orange 
+#+PROPERTY: :green 
+#+PROPERTY: :blue 
+#+PROPERTY: orgtrello-user-me ryanroberts
+:END:

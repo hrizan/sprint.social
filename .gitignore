@@ -19,6 +19,7 @@ results
 npm-debug.log
 node_modules
 !/platforms/android/cordova/node_modules
+.tern-port
 
 # Grunt ignores
 _SpecRunner.html
