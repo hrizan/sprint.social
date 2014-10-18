@@ -10,6 +10,12 @@
         <!-- build:remove -->
         <link rel="stylesheet" type="text/css" href="css/signup.css" />
         <!-- /build -->
+        <script>
+        window.onerror = function (message, file, line) {
+            console.log("Error in Application: " +
+            message + ". Source File: " + file + ", Line: " + line);
+        };
+        </script>
     </head>
     <body>
         <div class="panel-overlay"></div>
