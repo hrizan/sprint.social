@@ -20,7 +20,7 @@ var signup = (function() {
     };
 
     signup.init = function() {
-            facebookConnectPlugin.getLoginStatus(function(status) {
+        facebookConnectPlugin.getLoginStatus(function(status) {
             console.log(status);
             telerikSignIn(status.authResponse.accessToken,
                 function() {
@@ -34,9 +34,9 @@ var signup = (function() {
             function(status) {
                 console.log(JSON.stringify(status));
                 telerikSignIn(status.authResponse.accessToken,
-                function() {
-                    app.loadMain();
-                });
+                    function() {
+                        app.loadMain();
+                    });
             },
             function(err) {
                 console.log(JSON.stringify(err));
