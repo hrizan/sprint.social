@@ -157,6 +157,10 @@ input[type="number"], input[type="tel"]{
     margin-top: 96px;
 }
 
+.vertical-align-ish a.button.retry {
+    margin-top: 48px;
+}
+
 .vertical-align-ish {
     margin-top: 25%;
 }

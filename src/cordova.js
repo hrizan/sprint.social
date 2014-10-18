@@ -252,10 +252,11 @@ var pedometer = (function() {
     "use strict";
 
     var pedometer = {};
+    var doStop;
 
     pedometer.startPedometerUpdates = function (callback) {
         var total = 0;
-        var doStop;
+        doStop = false;
 
         var sendDistance = function () {
             total += Math.random() * 10;
@@ -264,8 +265,6 @@ var pedometer = (function() {
                 callback({ "distance": total });
                 if (!doStop) {
                     sendDistance();
-                } else {
-                    doStop = false;
                 }
             }, 500);
         };
@@ -274,7 +273,10 @@ var pedometer = (function() {
     };
 
     pedometer.stopPedometerUpdates = function (callback) {
-        setTimeout(callback, 10);
+        doStop = true;
+        if (typeof(callback) === "function") {
+            setTimeout(callback, 10);
+        }
     };
 
     return pedometer;

@@ -11,20 +11,24 @@ var race = (function() {
 
     var configureButtons = function () {
         $$(".start").on("click", startRace);
-        $$(".stop").on("click", stopRace);
+        $$(".cancel").on("click", cancelRace);
+        $$(".retry").on("click", showRetry);
+        $$(".back.link").on("click", pedometer.stopPedometerUpdates);
     };
 
     var startRace = function () {
         $$(".marks").css("display", "none");
-        $$(".link.back").css("display", "none");
         $$(".go").css("display", "block");
 
         startBackgroundTask();
     };
 
-    var stopRace = function () {
+    var cancelRace = function () {
+        pedometer.stopPedometerUpdates(showRetry);
+    };
+
+    var showRetry = function () {
         $$(".marks").css("display", "block");
-        $$(".link.back").css("display", "block");
         $$(".go").css("display", "none");
     };
 
