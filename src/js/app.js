@@ -37,7 +37,7 @@ var app = (function() {
         return device.uuid + app.phoneNumber;
     };
 
-    var setDeviceId = function(uuid) {
+    var setDeviceId = function (uuid) {
         device.uuid = uuid;
         app.init();
     };

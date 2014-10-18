@@ -77,6 +77,10 @@ navigator.notification = (function() {
     notification.vibrate = function(message) {
         console.log("navigator.notification.vibrate()");
     };
+    
+    notification.beep = function(count) {
+        console.log("navigator.notification.beep('" + count + "')");
+    };
 
     return notification;
 }());
@@ -253,12 +257,15 @@ var pedometer = (function() {
         var total = 0;
 
         var sendDistance = function () {
-            total += Math.random * 10;
+            total += Math.random() * 10;
             setTimeout(function() {
+                console.log(total);
                 callback({ "distance": total });
                 sendDistance();
             }, 500);
         };
+
+        sendDistance();
     };
 
     return pedometer;
