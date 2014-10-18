@@ -14,7 +14,7 @@ var telerik = (function() {
     };
     var as = function(tok) {
         return function(req) {
-            req.setRequestHeader("Authorization","Bearer " + tok);
+            req.setRequestHeader("Authorization", "Bearer " + tok);
         };
     };
 
@@ -36,11 +36,12 @@ var telerik = (function() {
 
         request.send();
     };
+    
 
 
-    var post = function(auth, service, params, succ, error) {
+    var update = function(method,auth,service, params, succ, error) {
         var request = new XMLHttpRequest();
-        request.open("POST", serviceUri(service), true);
+        request.open(method, serviceUri(service), true);
         request.setRequestHeader("Content-Type", "application/json");
 
         auth(request);
@@ -58,6 +59,16 @@ var telerik = (function() {
         return request;
     };
 
+    var post = function(auth,service,params,succ,error) {
+        update("POST",auth,service,params,succ,error);
+    };
+
+    var put = function(auth,service,id,params,succ,error) {
+        update("PUT",auth,service + "/" + id,params,succ,error);
+    };
+
+
+
     telerik.login = function(token, succ, error) {
         return post(anon, "Users", {
             "Identity": {
@@ -68,15 +79,38 @@ var telerik = (function() {
     };
 
 
-    telerik.syncFriends = function(token, succ, error) {
-        facebookConnectPlugin.api("/me/friends", ["user_friends"], function(res) {
-            succ(res);
-        },error);
-    };
-
-
     telerik.me = function(token, succ, error) {
         return get(as(token), "Users/me", succ, error);
+    };
+
+    var unzip = function(pairs) {
+        var l = [],
+            r = [];
+
+        for (var i = 0; i !== pairs.length; i = i + 1) {
+            l.push(pairs[i].timeStamp);
+            r.push(pairs[i].distance);
+        }
+
+        return [r, l];
+    };
+
+    telerik.challenge = function(token, racedata, succ, error) {
+        var unzipped = unzip(racedata);
+
+        return post(as(token), "Race", {
+            "ChallengerTime": unzipped[0],
+            "ChallengerDistance": unzipped[1]
+        }, succ, error);
+    };
+
+    telerik.accept = function(token,raceid,racedata,succ,error) {
+        var unzipped = unzip(racedata);
+
+        return put(as(token), "Race",raceid, {
+            "ChallengedTime": unzipped[0],
+            "ChallengedDistance": unzipped[1]
+        }, succ, error);
     };
 
 
