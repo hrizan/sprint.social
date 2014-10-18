@@ -9,7 +9,11 @@ var telerik = (function() {
     };
 
     var anonRequest = function() {
-        return new XMLHttpRequest();
+        var request = anonRequest();
+
+        request.setRequestHeader("Authorization", "");
+
+        return request;
     };
 
     var authenticatedRequest = function(token) {
@@ -55,12 +59,14 @@ var telerik = (function() {
 
     telerik.login = function(token, succ, error) {
         return post(anonRequest(), "Users", {
-            Identity: {
+            "Identity": {
                 "Provider": "Facebook",
                 "Token": token
             }
         }, succ, error);
     };
+
+
 
     telerik.me = function(token, succ, error) {
         return get(authenticatedRequest(token), "Users/me", succ, error);
