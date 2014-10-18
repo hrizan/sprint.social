@@ -4,8 +4,6 @@ var result = (function() {
 
     var c = document.getElementById("c");
     var result = {};
-
-
     result.replay = function(rx) {
         //var paticipants = rx.count,
         //    surface = c.getContext('2d');

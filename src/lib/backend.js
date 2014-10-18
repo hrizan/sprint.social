@@ -8,24 +8,17 @@ var telerik = (function() {
         return "http://api.everlive.com/v1/Cpz7JJXyDcIJPbOl/" + service;
     };
 
-    var anonRequest = function() {
-        var request = anonRequest();
+    
+    var anon = function(req) {req.setRequestHeader("Authorization",null);};
+    var as = function(tok){ 
+        return function(req) {req.setRequestHeader("Authorization",tok);};};
 
-        request.setRequestHeader("Authorization", "");
 
-        return request;
-    };
-
-    var authenticatedRequest = function(token) {
-        var request = anonRequest();
-
-        request.setRequestHeader("Authorization", token);
-
-        return request;
-    };
-
-    var get = function(request, service, succ, error) {
+    var get = function(auth,service, succ, error) {
+        var request = new XMLHttpRequest();
         request.open("GET", serviceUri(service), true);
+
+        auth(request);
 
         request.onload = request.ontimeout = function() {
             if (request.status >= 200 && request.status < 400) {
@@ -40,10 +33,13 @@ var telerik = (function() {
     };
 
 
-    var post = function(request, service, params, succ, error) {
+    var post = function(auth,service, params, succ, error) {
+        var request = new XMLHttpRequest();
         request.open("POST", serviceUri(service), true);
+        
         request.setRequestHeader("Content-Type", "application/json");
-
+        auth(request);
+        
         request.onload = request.ontimeout = function() {
             if (request.status >= 200 && request.status < 400) {
                 return succ(request.responseText, params);
@@ -58,7 +54,7 @@ var telerik = (function() {
     };
 
     telerik.login = function(token, succ, error) {
-        return post(anonRequest(), "Users", {
+        return post(anon, "Users", {
             "Identity": {
                 "Provider": "Facebook",
                 "Token": token
@@ -69,7 +65,7 @@ var telerik = (function() {
 
 
     telerik.me = function(token, succ, error) {
-        return get(authenticatedRequest(token), "Users/me", succ, error);
+        return get(as(token), "Users/me", succ, error);
     };
 
 
