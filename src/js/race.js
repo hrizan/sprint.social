@@ -11,7 +11,8 @@ var race = (function() {
         raceData = {
             friendId: qs.friendId,
             raceId: qs.raceId,
-            userId: app.user.Identity.Facebook.id
+            userId: app.user.Identity.Facebook.id,
+            solo: qs.solo
         };
         configureButtons();
     };
@@ -44,7 +45,11 @@ var race = (function() {
 
     var finishRace = function () {
         $$(".marks, .go").css("display", "none");
-        $$(".finish").css("display", "block");
+        if (raceData.solo) {
+            $$(".pb").css("display", "block");
+        } else {
+            $$(".finish").css("display", "block");
+        }
     };
 
     var startBackgroundTask = function () {
@@ -97,7 +102,10 @@ var race = (function() {
     var submissionSuccess = function (raceResult) {
         app.f7.hidePreloader();
         console.log(raceResult);
-        // TODO show result or whatever
+        if (raceData.raceId) {
+            app.mainView.loadPage("result.html?raceId=" + raceData.raceId);
+        }
+        // TODO show when no result yet
     };
 
     return race;
