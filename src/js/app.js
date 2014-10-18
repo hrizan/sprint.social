@@ -15,10 +15,21 @@ var app = (function () {
     app.signupView = null;
 
     app.init = function () {
+    app.store = function(k,v) {
+        localStorage.setItem(k,JSON.stringify(v));
+    };
+
+    app.load = function(k,v) {
+        JSON.parse(localStorage.getItem(k));
+    };
+
+
+    app.init = function() {
         initFramework();
 
-        app.userToken = localStorage.getItem("userToken");
-        app.user = localStorage.getItem("user");
+        app.userToken = app.load("userToken");
+        app.user = app.load("user");
+        app.friends = app.load("friends");
 
         if (app.userToken) {
             app.loadMain();

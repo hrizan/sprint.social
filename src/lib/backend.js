@@ -1,4 +1,4 @@
-/*global fjs */
+/*global fjs , facebookConnectPlugin, app, localStorage */
 var telerik = (function() {
     "use strict";
 
@@ -8,13 +8,18 @@ var telerik = (function() {
         return "http://api.everlive.com/v1/Cpz7JJXyDcIJPbOl/" + service;
     };
 
-    
-    var anon = function(req) {req.setRequestHeader("Authorization",null);};
-    var as = function(tok){ 
-        return function(req) {req.setRequestHeader("Authorization",tok);};};
+
+    var anon = function(req) {
+        req.setRequestHeader("Authorization", null);
+    };
+    var as = function(tok) {
+        return function(req) {
+            req.setRequestHeader("Authorization","Bearer " + tok);
+        };
+    };
 
 
-    var get = function(auth,service, succ, error) {
+    var get = function(auth, service, succ, error) {
         var request = new XMLHttpRequest();
         request.open("GET", serviceUri(service), true);
 
@@ -33,13 +38,13 @@ var telerik = (function() {
     };
 
 
-    var post = function(auth,service, params, succ, error) {
+    var post = function(auth, service, params, succ, error) {
         var request = new XMLHttpRequest();
         request.open("POST", serviceUri(service), true);
-        
         request.setRequestHeader("Content-Type", "application/json");
+
         auth(request);
-        
+
         request.onload = request.ontimeout = function() {
             if (request.status >= 200 && request.status < 400) {
                 return succ(request.responseText, params);
@@ -62,6 +67,12 @@ var telerik = (function() {
         }, succ, error);
     };
 
+
+    telerik.syncFriends = function(token, succ, error) {
+        facebookConnectPlugin.api("/me/friends", ["user_friends"], function(res) {
+            succ(res);
+        },error);
+    };
 
 
     telerik.me = function(token, succ, error) {

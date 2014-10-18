@@ -5,18 +5,31 @@ var signup = (function() {
 
     var signup = {};
 
+    var syncFriends = function(token, succ, error) {
+        facebookConnectPlugin.api("/me/friends", ["user_friends"], function(res) {
+            console.log(res);
+            app.store("friends", app.friends = res.data);
+            succ(app.friends);
+        }, error);
+    };
+
     var telerikSignIn = function(accessToken, succ) {
         telerik.login(accessToken, function(response) {
-            app.userToken = response.access_token;
-            localStorage.setItem("userToken", app.userToken);
-            console.log(JSON.stringify(response));
+            response = JSON.parse(response);
+
+            app.store("userToken", app.userToken = response.Result.access_token);
+
             telerik.me(app.userToken, function(user) {
-                app.user = user;
-                localStorage.setItem("user", user);
-                return succ(user);
+                user = JSON.parse(user);
+
+                app.store("user", app.user = user.Result);
+                syncFriends(app.userToken, function(friends) {
+                    succ(friends);
+                });
             }, function() {});
         }, function() {});
     };
+
 
     signup.init = function() {
         facebookConnectPlugin.getLoginStatus(function(res) {
@@ -37,7 +50,6 @@ var signup = (function() {
             function(res) {
                 console.log(res);
                 facebookConnectPlugin.getAccessToken(function(token) {
-                    console.log(token);
                     telerikSignIn(token,
                         function() {
                             app.loadMain();
