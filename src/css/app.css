@@ -200,3 +200,13 @@ i.icon-solo {
     height: 30px;
     background: url("../img/solo.svg") 50% 50% / 26px 26px no-repeat;
 }
+
+.button.button-fill.color-green {
+    background: #43C5B8;
+    color: #fff;
+}
+
+.button.button-fill.color-red {
+    background: #f56363;
+    color: #fff;
+}
