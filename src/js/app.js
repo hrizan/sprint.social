@@ -5,7 +5,8 @@ var $$ = Dom7;
 var data = {};
 data.url = "TODO";
 
-var app = (function () {
+var app = (function() {
+
     "use strict";
 
     var app = {};
@@ -14,12 +15,11 @@ var app = (function () {
     app.mainView = null;
     app.signupView = null;
 
-    app.init = function () {
-    app.store = function(k,v) {
-        localStorage.setItem(k,JSON.stringify(v));
+    app.store = function(k, v) {
+        localStorage.setItem(k, JSON.stringify(v));
     };
 
-    app.load = function(k,v) {
+    app.load = function(k, v) {
         JSON.parse(localStorage.getItem(k));
     };
 
@@ -40,20 +40,20 @@ var app = (function () {
         setTimeout(hideSplash, 500);
     };
 
-    app.preInit = function () {
+    app.preInit = function() {
         plugins.uniqueDeviceID.get(setDeviceId);
     };
 
-    app.getDeviceId = function () {
+    app.getDeviceId = function() {
         return device.uuid + app.phoneNumber;
     };
 
-    var setDeviceId = function (uuid) {
+    var setDeviceId = function(uuid) {
         device.uuid = uuid;
         app.init();
     };
 
-    app.loadMain = function () {
+    app.loadMain = function() {
         app.signupView.destroy();
         $$(".view-signup").remove();
         $$(".view-main").css("display", "block");
@@ -67,13 +67,13 @@ var app = (function () {
         navigator.notification.alert(msg, callback, "Sprint Social", "OK");
     };
 
-    var hideSplash = function () {
+    var hideSplash = function() {
         navigator.splashscreen.hide();
         StatusBar.show();
         StatusBar.styleLightContent();
     };
 
-    var initFramework = function () {
+    var initFramework = function() {
         app.f7 = new Framework7({
             modalTitle: "Sprint Social",
             sortable: false,
