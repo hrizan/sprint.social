@@ -82,7 +82,7 @@ var Tween = function( startStates ){
   this.from( startStates );
 
   return this;
-  
+
 };
 
 Tween.prototype = {
@@ -255,7 +255,7 @@ Tween.prototype = {
       previousResult = self.valueAtTime(0);
 
       self.handle = tick.add( function( elapsed, stop ){
-    
+
         var percent = Math.min(1, elapsed / self._duration), result, arr = [], i, deltas = {};
 
         if(!self.stopped){
@@ -525,7 +525,7 @@ BezierCurve.prototype = {
     };
 
   },
-  
+
   pointArray : function( n ){
 
     return [ this.b(n, 0), this.b(n, 1) ];
@@ -624,7 +624,7 @@ module.exports = function(arr, target){
     return [middle, true];
 
   }
-  
+
   return search( 0, arr.length-1 );
 
 }
@@ -1057,7 +1057,7 @@ var Tick = function(){
 				tick = function tick( timestamp ){
 					runCallbacks.call( self, timestamp );
 					raf(tick);
-				} 
+				}
 
  			} else {
  				// requestAnimationFrame returns a lame unix timestamp. At least we've got performance.now() though.
@@ -1098,7 +1098,7 @@ Tick.prototype = {
 				update : function( now ){
 					if(!paused){
 					callback( now - start, stop);
-					}					
+					}
 				},
 				pause : function(){
 					paused = true;
@@ -1106,18 +1106,18 @@ Tick.prototype = {
 				},
 				resume : function(){
 					start = start + now() - pausedAt;
-					paused = false; 
+					paused = false;
 				},
 				stop : stop
 			}
-				
+
 		};
 
 		return function( callback ){
 
 			var id = ++uuid;
 			var stop = function(){
-				delete(callbacks[id]);				
+				delete(callbacks[id]);
 			}
 			callbacks[id] = create( callback, now(), stop);
 			return {
@@ -1283,10 +1283,6 @@ module.exports.cancel = function() {
   }
 
 }).call(this);
-
-/*
-//@ sourceMappingURL=performance-now.map
-*/
 
 }).call(this,require("JkpR2F"))
 },{"JkpR2F":13}],13:[function(require,module,exports){

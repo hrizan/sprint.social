@@ -36,7 +36,7 @@ var telerik = (function() {
 
         request.send();
     };
-    
+
 
 
     var update = function(method,auth,service, params, succ, error) {
@@ -87,12 +87,14 @@ var telerik = (function() {
         var l = [],
             r = [];
 
+        pairs = pairs.splits;
+
         for (var i = 0; i !== pairs.length; i = i + 1) {
             l.push(pairs[i].timeStamp);
             r.push(pairs[i].distance);
         }
 
-        return [r, l];
+        return [l, r];
     };
 
     telerik.challenge = function(token, racedata, succ, error) {
@@ -100,11 +102,12 @@ var telerik = (function() {
 
         return post(as(token), "Race", {
             "ChallengerTime": unzipped[0],
-            "ChallengerDistance": unzipped[1]
+            "ChallengerDistance": unzipped[1],
+            "ChallengedId": racedata.friendId
         }, succ, error);
     };
 
-    telerik.accept = function(token,raceid,racedata,succ,error) {
+    telerik.accept = function(token, raceid, racedata, succ, error) {
         var unzipped = unzip(racedata);
 
         return put(as(token), "Race",raceid, {
