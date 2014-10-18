@@ -100,7 +100,9 @@
     }
 
     // calls into javascript global function 'handleOpenURL'
-    NSString* jsString = [NSString stringWithFormat:@"handleOpenURL(\"%@\");", url];
+    //NSString* jsString = [NSString stringWithFormat:@"handleOpenURL(\"%@\");", url];
+    // *** EDIT LEE C - check that handleOpenURL exists
+    NSString* jsString = [NSString stringWithFormat:@"if (typeof handleOpenURL === 'function') { handleOpenURL(\"%@\");}", url];
     [self.viewController.webView stringByEvaluatingJavaScriptFromString:jsString];
 
     // all plugins will get the notification, and their handlers will be called
