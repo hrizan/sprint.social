@@ -61,6 +61,9 @@
     <access origin="https://api.facebook.com" />
     <access origin="https://*.fbcdn.net" />
     <access origin="https://*.akamaihd.net" />
+    <feature name="EqatecAnalytics">
+        <param name="ios-package" value="EqatecAnalyticsPlugin" />
+    </feature>
     <name>Sprint</name>
     <description>
         Sprint Social
@@ -79,7 +82,4 @@
     <preference name="StatusBarStyle" value="lightcontent" />
     <preference name="BackupWebStorage" value="none" />
     <preference name="Orientation" value="portrait" />
-    <feature name="EqatecAnalytics">
-        <param name="ios-package" value="EqatecAnalyticsPlugin" />
-    </feature>
 </widget>
