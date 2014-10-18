@@ -210,3 +210,8 @@ i.icon-solo {
     background: #f56363;
     color: #fff;
 }
+
+.button.button-fill.color-gray {
+    background: #B2ADA7;
+    color: #fff;
+}
