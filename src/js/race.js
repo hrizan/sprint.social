@@ -5,10 +5,10 @@ var race = (function() {
 
     var race = {};
 
-    var raceData = {};
+    race.data = {};
 
     race.init = function (qs) {
-        raceData = {
+        race.data = {
             friendId: qs.friendId,
             raceId: qs.raceId,
             userId: app.user.Identity.Facebook.id,
@@ -22,11 +22,12 @@ var race = (function() {
         $$(".cancel").on("click", cancelRace);
         $$(".retry").on("click", showRetry);
         $$(".submit").on("click", submitResult);
+        $$(".result").on("click", seeResult);
         $$(".back.link").on("click", pedometer.stopPedometerUpdates);
     };
 
     var startRace = function () {
-        raceData.splits = [];
+        race.data.splits = [];
 
         $$(".marks, .finish").css("display", "none");
         $$(".go").css("display", "block");
@@ -45,10 +46,10 @@ var race = (function() {
 
     var finishRace = function () {
         $$(".marks, .go").css("display", "none");
-        if (raceData.solo) {
-            $$(".pb").css("display", "block");
+        if (race.data.solo) {
+            $$(".solo").css("display", "block");
         } else {
-            $$(".finish").css("display", "block");
+            $$(".challenge").css("display", "block");
         }
     };
 
@@ -72,8 +73,8 @@ var race = (function() {
     };
 
     var addSplitTime = function (distance) {
-        if (raceData.splits) {
-            raceData.splits.push({
+        if (race.data.splits) {
+            race.data.splits.push({
                 "timeStamp": new Date().getTime(),
                 "distance": distance
             });
@@ -87,9 +88,9 @@ var race = (function() {
 
         app.f7.showPreloader("Submitting...");
 
-        var method = raceData.raceId ? "accept" : "challenge";
+        var method = race.data.raceId ? "accept" : "challenge";
 
-        telerik[method](app.userToken, raceData,
+        telerik[method](app.userToken, race.data,
             submissionSuccess, submissionFailed);
     };
 
@@ -102,10 +103,14 @@ var race = (function() {
     var submissionSuccess = function (raceResult) {
         app.f7.hidePreloader();
         console.log(raceResult);
-        if (raceData.raceId) {
-            app.mainView.loadPage("result.html?raceId=" + raceData.raceId);
+        if (race.data.raceId) {
+            app.mainView.loadPage("result.html?raceId=" + race.data.raceId);
         }
         // TODO show when no result yet
+    };
+
+    var seeResult = function () {
+        app.mainView.loadPage("result.html");
     };
 
     return race;
