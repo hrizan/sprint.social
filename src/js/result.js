@@ -23,11 +23,27 @@ var result = (function() {
 
     var result = {};
 
+    var zip = function(ax, bx) {
+        var rx = [];
+
+        for (var i = 0; i !== ax.length; i = i + 1) {
+            rx.push({
+                timeStamp: ax[i],
+                distance: bx[i]
+            });
+        }
+        return rx;
+    };
+
+
     var loadRace = function(id, cb) {
         if (!id) {
             cb(race.data.splits, []);
         } else {
-            telerik.race(app.userToken, id, cb);
+            telerik.race(app.userToken, id, function(race) {
+                race = JSON.parse(race);
+                cb(zip(race.ChallengerTime, race.ChallengerDistance), zip(race.ChallengedTime, race.ChallengedDistance));
+            });
         }
     };
 
@@ -65,7 +81,7 @@ var result = (function() {
         });
         tween = tween.wait(3);
         var rxd = 10000 / (rx[rx.length - 1].timeStamp - rx[0].timeStamp);
-               for (var i = 1; i !== rx.length - 1; i = i + 1) {
+        for (var i = 1; i !== rx.length - 1; i = i + 1) {
             tween = tween.to({
                 x: runner.x,
                 y: scaleTo(c.height - 30, rx[i + 1].distance)
@@ -77,17 +93,17 @@ var result = (function() {
     result.replay = function(c1, c2) {
         var c = document.getElementById("c");
         var g = new createjs.Graphics();
-        
+
         var stage = new createjs.Stage(c);
         stage.autoClear = true;
 
         var startLine = new createjs.Shape(g);
-        startLine.graphics.setStrokeStyle(2).beginStroke("#111111").moveTo(10, 30).lineTo(c.width - 10,30);
+        startLine.graphics.setStrokeStyle(2).beginStroke("#111111").moveTo(10, 30).lineTo(c.width - 10, 30);
 
         var finishLine = new createjs.Shape(g);
         finishLine.graphics.setStrokeStyle(2).beginStroke("#111111").moveTo(10, c.height - 30).lineTo(c.width - 10, c.height - 30);
 
- 
+
         stage.addChild(startLine);
         stage.addChild(finishLine);
 
