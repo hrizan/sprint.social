@@ -9,7 +9,6 @@ var signup = (function() {
         telerik.login(accessToken, function(response) {
             app.userToken = response.access_token;
             localStorage.setItem("userToken", app.userToken);
-
             console.log(JSON.stringify(response));
             telerik.me(app.userToken, function(user) {
                 app.user = user;
@@ -20,8 +19,8 @@ var signup = (function() {
     };
 
     signup.init = function() {
-        facebookConnectPlugin.getLoginStatus(function(status) {
-            console.log(status);
+        facebookConnectPlugin.getLoginStatus(function(res) {
+            if(res.status !== "connected") {return;}
             telerikSignIn(status.authResponse.accessToken,
                 function() {
                     app.loadMain();
