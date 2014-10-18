@@ -40,16 +40,15 @@ var result = (function() {
         if (!id) {
             cb(race.data.splits, []);
         } else {
-            telerik.race(app.userToken, id, function(race) {
-                race = JSON.parse(race);
-                cb(zip(race.ChallengerTime, race.ChallengerDistance), zip(race.ChallengedTime, race.ChallengedDistance));
+            telerik.race(app.userToken, id, function(r) {
+                var parsed = JSON.parse(r).Result;
+                cb(zip(parsed.ChallengerTime, parsed.ChallengerDistance), zip(parsed.ChallengedTime, parsed.ChallengedDistance));
             });
         }
     };
 
-    result.init = function() {
-        var id = window.location.search;
-        loadRace(id, result.replay);
+    result.init = function(qs) {
+        loadRace(qs.raceId, result.replay);
     };
 
     var scaleTo = function(s, e) {
