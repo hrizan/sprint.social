@@ -113,6 +113,20 @@ var telerik = (function() {
         }), "Race", succ, error);
     };
 
+    telerik.resultsOfMyChallenges = function(token, facebookId, succ, error) {
+        return get(as(token, {
+            "ChallengedDistance": { "$ne" : null },
+            "ChallengerId": facebookId
+        }), "Race", succ, error);
+    };
+
+    telerik.resultsOfBeingChallenged = function(token, facebookId, succ, error) {
+        return get(as(token, {
+            "ChallengedDistance": { "$ne" : null },
+            "ChallengedId": facebookId
+        }), "Race", succ, error);
+    };
+
     telerik.accept = function(token, raceData, succ, error) {
         var unzipped = unzip(raceData);
 
