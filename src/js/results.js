@@ -7,7 +7,6 @@ var results = (function() {
 
     results.init = function () {
         renderResultsOfMyChallenges();
-        renderResultsOfBeingChallenged();
     };
 
     var renderResultsOfMyChallenges = function () {
@@ -30,6 +29,7 @@ var results = (function() {
             $$("#results1").html("<div class='content-center vertical-align-ish'>" +
                 "<h3>No results of your challenges</h3></div>");
         }
+        renderResultsOfBeingChallenged();
     };
 
     var getResultsOfBeingChallengedSuccess = function (challenges) {
