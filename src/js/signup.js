@@ -61,5 +61,18 @@ var signup = (function() {
             });
     };
 
+    
+    signup.profileimage = function(id,cb) {
+        if(typeof(facebookConnectPlugin.api === 'undefined'))
+        {
+            return cb("http://placekitten.com/200/300");
+        }
+
+        facebookConnectPlugin.api("/" + id + "/picture?redirect=false",[],function(res){
+            return cb(res.data.url);
+        });
+    };
+
+
     return signup;
 })();
