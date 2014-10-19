@@ -15,6 +15,7 @@ var telerik = (function() {
     var as = function(tok, filter) {
         return function(req) {
             req.setRequestHeader("Authorization", "Bearer " + tok);
+            req.setRequestHeader("X-Everlive-Sort", JSON.stringify({ "ModifiedAt" : -1 }));
             if (filter) {
                 req.setRequestHeader("X-Everlive-Filter", JSON.stringify(filter));
             }
