@@ -64,6 +64,10 @@
     <feature name="EqatecAnalytics">
         <param name="ios-package" value="EqatecAnalyticsPlugin" />
     </feature>
+    <feature name="BackgroundAudio">
+        <param name="ios-package" value="BackgroundAudio" />
+        <param name="onload" value="true" />
+    </feature>
     <name>Sprint</name>
     <description>
         Sprint Social
@@ -82,8 +86,4 @@
     <preference name="StatusBarStyle" value="lightcontent" />
     <preference name="BackupWebStorage" value="none" />
     <preference name="Orientation" value="portrait" />
-    <feature name="BackgroundAudio">
-        <param name="ios-package" value="BackgroundAudio" />
-        <param name="onload" value="true" />
-    </feature>
 </widget>
