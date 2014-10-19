@@ -42,7 +42,7 @@ var result = (function() {
         } else {
             telerik.race(app.userToken, id, function(r) {
                 var parsed = JSON.parse(r).Result;
-                cb(zip(parsed.ChallengerTime, parsed.ChallengerDistance), zip(parsed.ChallengedTime, parsed.ChallengedDistance));
+                cb(zip(parsed.ChallengedTime, parsed.ChallengedDistance),zip(parsed.ChallengerTime, parsed.ChallengerDistance));
             });
         }
     };
@@ -61,7 +61,7 @@ var result = (function() {
         var ball = new createjs.Shape();
         ball.graphics.setStrokeStyle(2, 'round', 'round');
         ball.graphics.beginStroke(('#000000'));
-        ball.graphics.beginFill(col).drawCircle(0, 0, 10);
+        ball.graphics.beginFill(col).drawCircle(0, 0, 20);
         ball.graphics.endStroke();
         ball.graphics.endFill();
         ball.graphics.setStrokeStyle(1, 'round', 'round');
@@ -76,17 +76,21 @@ var result = (function() {
 
     var tweenfor = function(runner, rx, c) {
         var ms = (rx[rx.length - 1].timeStamp - rx[0].timeStamp);
+        
+        console.log(rx);
+        console.log(ms);
 
         var tween = createjs.Tween.get(runner, {
             loop: false
         });
-        tween = tween.wait(3);
+        tween = tween.to({x:runner.x,y:30});
+        tween = tween.wait(2000);
         var rxd = 10000 / ms;
         for (var i = 1; i !== rx.length - 1; i = i + 1) {
             tween = tween.to({
                 x: runner.x,
                 y: scaleTo(c.height - 30, rx[i + 1].distance)
-            }, rxd * (rx[i + 1].timeStamp - rx[i].timeStamp));
+            }, (rx[i + 1].timeStamp - rx[i].timeStamp) / 2);
         }
 
         return {
@@ -96,7 +100,6 @@ var result = (function() {
     };
 
 
-
     var showResult = function(a1, a2) {
         var solo = a2 === null;
 
@@ -104,7 +107,7 @@ var result = (function() {
         var losing = a2;
         var won = true;
 
-        if (!solo && a2.ms < a1.ms) {
+        if (!solo && (a2.ms < a1.ms)) {
             won = false;
             winning = a2;
             losing = a1;
@@ -114,9 +117,9 @@ var result = (function() {
             $$("#c").css("display", "none");
             $$("#score").css("display", "block");
             if (!solo) {
-                $$("#score h1").text((won ? "Won" : "Lost") + " in " + (winning.ms / 1000).toFixed(2) + " vs " + (losing.ms / 1000).toFixed(2) + " s");
+                $$("#score h1").text((won ? "Won" : "Lost") + "! in " + (a1.ms / 1000).toFixed(2) + " v " + (a2.ms / 1000).toFixed(2) + " s");
             } else {
-                $$("#score h1").text("Complete in " + (winning.ms / 1000).toFixed(2) + " s");
+                $$("#score h1").text("Complete in " + (a1.ms / 1000).toFixed(2) + " s");
             }
         });
     };
@@ -134,7 +137,6 @@ var result = (function() {
 
         var finishLine = new createjs.Shape(g);
         finishLine.graphics.setStrokeStyle(2).beginStroke("#111111").moveTo(10, c.height - 30).lineTo(c.width - 10, c.height - 30);
-
 
         stage.addChild(startLine);
         stage.addChild(finishLine);
