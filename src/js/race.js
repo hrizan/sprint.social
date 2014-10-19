@@ -80,8 +80,8 @@ var race = (function() {
         addSplitTime(distance);
 
         if (pedometerData.distance >= 100) {
-            navigator.vibrate(3000);
             finishAudio.play();
+            navigator.vibrate(3000);
             pedometer.stopPedometerUpdates(finishRace);
         }
     };
