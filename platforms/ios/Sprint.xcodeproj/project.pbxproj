@@ -61,6 +61,10 @@
 		E5582223E0E54623ACF95E70 /* CDVDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 5765EF5B35084138801429B7 /* CDVDevice.m */; };
 		FA157FB2CE8D47C7B040AB56 /* UICKeyChainStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B700FCA61647C5BE064427 /* UICKeyChainStore.m */; };
 		54C1B27A0394498396C31DC9 /* BackgroundAudio.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B2DD083D73F4157810087F6 /* BackgroundAudio.m */; };
+		92EDDEB157F24532831220DE /* CDVFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E263BA39804775B52540EC /* CDVFile.m */; };
+		2C6A23FF7BE149EAA9992239 /* CDVLocalFilesystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 401ADBCB6BC74F40B9C155F0 /* CDVLocalFilesystem.m */; };
+		58D475239B9248BA9DA004FD /* CDVAssetLibraryFilesystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 80E2C800C5914C29B442F9A3 /* CDVAssetLibraryFilesystem.m */; };
+		38963760BE5B4759AD8C4778 /* CDVSound.m in Sources */ = {isa = PBXBuildFile; fileRef = E771F03023C0426885BAEF24 /* CDVSound.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -162,6 +166,14 @@
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = Sprint/config.xml; sourceTree = "<group>"; };
 		0B2DD083D73F4157810087F6 /* BackgroundAudio.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "BackgroundAudio.m"; path = "nl.x-services.plugins.backgroundaudio/BackgroundAudio.m"; sourceTree = "<group>"; fileEncoding = 4; };
 		9D77D84E9E4D49F5BB05D92B /* BackgroundAudio.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "BackgroundAudio.h"; path = "nl.x-services.plugins.backgroundaudio/BackgroundAudio.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		65E263BA39804775B52540EC /* CDVFile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVFile.m"; path = "org.apache.cordova.file/CDVFile.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		401ADBCB6BC74F40B9C155F0 /* CDVLocalFilesystem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVLocalFilesystem.m"; path = "org.apache.cordova.file/CDVLocalFilesystem.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		80E2C800C5914C29B442F9A3 /* CDVAssetLibraryFilesystem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVAssetLibraryFilesystem.m"; path = "org.apache.cordova.file/CDVAssetLibraryFilesystem.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		58EDC9C071724658BBE55FCC /* CDVFile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVFile.h"; path = "org.apache.cordova.file/CDVFile.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		A03F279676D34013ACC94F7C /* CDVLocalFilesystem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVLocalFilesystem.h"; path = "org.apache.cordova.file/CDVLocalFilesystem.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		6B24B40FE3DD4665B4076275 /* CDVAssetLibraryFilesystem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVAssetLibraryFilesystem.h"; path = "org.apache.cordova.file/CDVAssetLibraryFilesystem.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		E771F03023C0426885BAEF24 /* CDVSound.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVSound.m"; path = "org.apache.cordova.media/CDVSound.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		34169FDE4C08464EA605870F /* CDVSound.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVSound.h"; path = "org.apache.cordova.media/CDVSound.h"; sourceTree = "<group>"; fileEncoding = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -328,6 +340,14 @@
 				CE0B402A00794DA89C00954E /* EQATECAnalyticsMonitor.h */,
 				0B2DD083D73F4157810087F6 /* BackgroundAudio.m */,
 				9D77D84E9E4D49F5BB05D92B /* BackgroundAudio.h */,
+				65E263BA39804775B52540EC /* CDVFile.m */,
+				401ADBCB6BC74F40B9C155F0 /* CDVLocalFilesystem.m */,
+				80E2C800C5914C29B442F9A3 /* CDVAssetLibraryFilesystem.m */,
+				58EDC9C071724658BBE55FCC /* CDVFile.h */,
+				A03F279676D34013ACC94F7C /* CDVLocalFilesystem.h */,
+				6B24B40FE3DD4665B4076275 /* CDVAssetLibraryFilesystem.h */,
+				E771F03023C0426885BAEF24 /* CDVSound.m */,
+				34169FDE4C08464EA605870F /* CDVSound.h */,
 			);
 			name = Plugins;
 			path = Sprint/Plugins;
@@ -536,6 +556,10 @@
 				68E75DD4A3D5476EB50410A7 /* FacebookConnectPlugin.m in Sources */,
 				21306FE407A04416BA86E8C5 /* EqatecAnalyticsPlugin.mm in Sources */,
 				54C1B27A0394498396C31DC9 /* BackgroundAudio.m in Sources */,
+				92EDDEB157F24532831220DE /* CDVFile.m in Sources */,
+				2C6A23FF7BE149EAA9992239 /* CDVLocalFilesystem.m in Sources */,
+				58D475239B9248BA9DA004FD /* CDVAssetLibraryFilesystem.m in Sources */,
+				38963760BE5B4759AD8C4778 /* CDVSound.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
