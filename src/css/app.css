@@ -95,6 +95,10 @@ input[type="number"], input[type="tel"]{
     margin: 94px 0 0;
 }
 
+.results-block {
+    margin: 64px 0 34px;
+}
+
 .challenge-block .list-group-title {
     background-color: #B2ADA7; /*#f56363; #43C5B8;*/
     color: #fff;
@@ -214,4 +218,10 @@ i.icon-solo {
 .button.button-fill.color-gray {
     background: #B2ADA7;
     color: #fff;
+}
+
+.list-block .item-text {
+    height: auto;
+    color: #B2ADA7;
+    font-size: 13px;
 }

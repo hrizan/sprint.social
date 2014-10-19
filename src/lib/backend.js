@@ -15,6 +15,7 @@ var telerik = (function() {
     var as = function(tok, filter) {
         return function(req) {
             req.setRequestHeader("Authorization", "Bearer " + tok);
+            req.setRequestHeader("X-Everlive-Sort", JSON.stringify({ "ModifiedAt" : -1 }));
             if (filter) {
                 req.setRequestHeader("X-Everlive-Filter", JSON.stringify(filter));
             }
@@ -109,6 +110,20 @@ var telerik = (function() {
     telerik.myChallenges = function(token, facebookId, succ, error) {
         return get(as(token, {
             "ChallengedDistance": null,
+            "ChallengedId": facebookId
+        }), "Race", succ, error);
+    };
+
+    telerik.resultsOfMyChallenges = function(token, facebookId, succ, error) {
+        return get(as(token, {
+            "ChallengedDistance": { "$ne" : null },
+            "ChallengerId": facebookId
+        }), "Race", succ, error);
+    };
+
+    telerik.resultsOfBeingChallenged = function(token, facebookId, succ, error) {
+        return get(as(token, {
+            "ChallengedDistance": { "$ne" : null },
             "ChallengedId": facebookId
         }), "Race", succ, error);
     };
