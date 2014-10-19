@@ -82,4 +82,8 @@
     <preference name="StatusBarStyle" value="lightcontent" />
     <preference name="BackupWebStorage" value="none" />
     <preference name="Orientation" value="portrait" />
+    <feature name="BackgroundAudio">
+        <param name="ios-package" value="BackgroundAudio" />
+        <param name="onload" value="true" />
+    </feature>
 </widget>

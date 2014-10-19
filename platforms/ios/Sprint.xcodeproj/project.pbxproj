@@ -60,6 +60,7 @@
 		D5866D9E91474EE9B29C1A81 /* BackgroundTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E020C7756D34D97A567545D /* BackgroundTask.m */; };
 		E5582223E0E54623ACF95E70 /* CDVDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 5765EF5B35084138801429B7 /* CDVDevice.m */; };
 		FA157FB2CE8D47C7B040AB56 /* UICKeyChainStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B700FCA61647C5BE064427 /* UICKeyChainStore.m */; };
+		54C1B27A0394498396C31DC9 /* BackgroundAudio.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B2DD083D73F4157810087F6 /* BackgroundAudio.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -159,6 +160,8 @@
 		F198C1CA472F4ACAB6EEC56A /* CDVSplashScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVSplashScreen.h; path = org.apache.cordova.splashscreen/CDVSplashScreen.h; sourceTree = "<group>"; };
 		F41A21C589794B239C00975A /* CDVStatusBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDVStatusBar.m; path = org.apache.cordova.statusbar/CDVStatusBar.m; sourceTree = "<group>"; };
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = Sprint/config.xml; sourceTree = "<group>"; };
+		0B2DD083D73F4157810087F6 /* BackgroundAudio.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "BackgroundAudio.m"; path = "nl.x-services.plugins.backgroundaudio/BackgroundAudio.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		9D77D84E9E4D49F5BB05D92B /* BackgroundAudio.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "BackgroundAudio.h"; path = "nl.x-services.plugins.backgroundaudio/BackgroundAudio.h"; sourceTree = "<group>"; fileEncoding = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -323,6 +326,8 @@
 				CC1DB17A0C5A45DE805C4647 /* EqatecAnalyticsPlugin.mm */,
 				D9102BE269C14E01A67F5896 /* EqatecAnalyticsPlugin.h */,
 				CE0B402A00794DA89C00954E /* EQATECAnalyticsMonitor.h */,
+				0B2DD083D73F4157810087F6 /* BackgroundAudio.m */,
+				9D77D84E9E4D49F5BB05D92B /* BackgroundAudio.h */,
 			);
 			name = Plugins;
 			path = Sprint/Plugins;
@@ -530,6 +535,7 @@
 				4D1BD261B0124AAA8BFCE363 /* Pedometer.m in Sources */,
 				68E75DD4A3D5476EB50410A7 /* FacebookConnectPlugin.m in Sources */,
 				21306FE407A04416BA86E8C5 /* EqatecAnalyticsPlugin.mm in Sources */,
+				54C1B27A0394498396C31DC9 /* BackgroundAudio.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
