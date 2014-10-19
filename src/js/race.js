@@ -7,6 +7,8 @@ var race = (function() {
 
     race.data = {};
 
+    var finishAudio = new Audio("audio/finish.mp3");
+
     race.init = function (qs) {
         race.data = {
             friendId: qs.friendId,
@@ -78,8 +80,8 @@ var race = (function() {
         addSplitTime(distance);
 
         if (pedometerData.distance >= 100) {
+            finishAudio.play();
             navigator.vibrate(3000);
-            navigator.notification.beep(3);
             pedometer.stopPedometerUpdates(finishRace);
         }
     };

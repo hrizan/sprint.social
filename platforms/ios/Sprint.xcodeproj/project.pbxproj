@@ -13,6 +13,7 @@
 		1F766FE113BBADB100FB74C0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1F766FDC13BBADB100FB74C0 /* Localizable.strings */; };
 		21306FE407A04416BA86E8C5 /* EqatecAnalyticsPlugin.mm in Sources */ = {isa = PBXBuildFile; fileRef = CC1DB17A0C5A45DE805C4647 /* EqatecAnalyticsPlugin.mm */; };
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
+		2C6A23FF7BE149EAA9992239 /* CDVLocalFilesystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 401ADBCB6BC74F40B9C155F0 /* CDVLocalFilesystem.m */; };
 		301BF552109A68D80062928A /* libCordova.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 301BF535109A57CC0062928A /* libCordova.a */; };
 		302D95F114D2391D003F00A1 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 302D95EF14D2391D003F00A1 /* MainViewController.m */; };
 		302D95F214D2391D003F00A1 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 302D95F014D2391D003F00A1 /* MainViewController.xib */; };
@@ -30,10 +31,13 @@
 		30FC414916E50CA1004E6F35 /* icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30FC414816E50CA1004E6F35 /* icon-72@2x.png */; };
 		385FFF16DC2C444985EC9603 /* CDVNotification.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AF32E32E2A8C4DA0BE1CE14C /* CDVNotification.bundle */; };
 		386686483A57490C8593D5F0 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D301D50321FA418DB2583717 /* CoreMotion.framework */; };
+		38963760BE5B4759AD8C4778 /* CDVSound.m in Sources */ = {isa = PBXBuildFile; fileRef = E771F03023C0426885BAEF24 /* CDVSound.m */; };
 		4174D0F895C0418FA2C29CF7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04906760218543F7B83CFA8C /* Security.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		4250DCAFCE6744079BC4CF32 /* CDVUniqueDeviceID.m in Sources */ = {isa = PBXBuildFile; fileRef = CF78568456B44C7C8643A04E /* CDVUniqueDeviceID.m */; };
 		4D1BD261B0124AAA8BFCE363 /* Pedometer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B65516A8FA042C0B69E0C82 /* Pedometer.m */; };
 		4DC45413247E4CBBA7609DD4 /* CDVSplashScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = A5BFB631949E491397B18065 /* CDVSplashScreen.m */; };
+		54C1B27A0394498396C31DC9 /* BackgroundAudio.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B2DD083D73F4157810087F6 /* BackgroundAudio.m */; };
+		58D475239B9248BA9DA004FD /* CDVAssetLibraryFilesystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 80E2C800C5914C29B442F9A3 /* CDVAssetLibraryFilesystem.m */; };
 		5B1594DD16A7569C00FEF299 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B1594DC16A7569C00FEF299 /* AssetsLibrary.framework */; };
 		607A5983EBDF4EF7B1A9DABB /* CDVLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 4789C2228DCD46629ABEBA33 /* CDVLogger.m */; };
 		68E75DD4A3D5476EB50410A7 /* FacebookConnectPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 91413AE86E034F209D6102AA /* FacebookConnectPlugin.m */; };
@@ -51,6 +55,7 @@
 		8087436919044D989D6F8CD0 /* libEQATECAnalyticsMonitoriOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0937C95B12014E5EA1E29B35 /* libEQATECAnalyticsMonitoriOS.a */; };
 		86788F8D2E804F069BA9EA05 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 957E070A60234E1DAF90C7D0 /* Accounts.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		8B1B66DE75FB4174BCD17F8E /* CDVVibration.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B93760A0834A5292CF4D2E /* CDVVibration.m */; };
+		92EDDEB157F24532831220DE /* CDVFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E263BA39804775B52540EC /* CDVFile.m */; };
 		9C9393AC81CD456FAD7CC578 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3456BF727F484C878073A28D /* libsqlite3.dylib */; };
 		A3A47E2DB46242F6A709EE00 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32AADA65101340CF95F82540 /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		CD4B420353CF4C9FAFCC1B32 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7513127CE531493183EEDF53 /* libstdc++.dylib */; };
@@ -82,6 +87,7 @@
 /* Begin PBXFileReference section */
 		04906760218543F7B83CFA8C /* Security.framework */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		0937C95B12014E5EA1E29B35 /* libEQATECAnalyticsMonitoriOS.a */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = archive.ar; name = libEQATECAnalyticsMonitoriOS.a; path = Sprint/Plugins/com.telerik.plugin.telerikanalytics/libEQATECAnalyticsMonitoriOS.a; sourceTree = "<group>"; };
+		0B2DD083D73F4157810087F6 /* BackgroundAudio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BackgroundAudio.m; path = "nl.x-services.plugins.backgroundaudio/BackgroundAudio.m"; sourceTree = "<group>"; };
 		1AFCE8326BF544BAB1EF37D9 /* CDVUniqueDeviceID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVUniqueDeviceID.h; path = hu.dpal.phonegap.plugins.UniqueDeviceID/CDVUniqueDeviceID.h; sourceTree = "<group>"; };
 		1B65516A8FA042C0B69E0C82 /* Pedometer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Pedometer.m; path = uk.co.ilee.pedometer/Pedometer.m; sourceTree = "<group>"; };
 		1D3623240D0F684500981E51 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -112,18 +118,23 @@
 		30FC414816E50CA1004E6F35 /* icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-72@2x.png"; sourceTree = "<group>"; };
 		32AADA65101340CF95F82540 /* AdSupport.framework */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		32CA4F630368D1EE00C91783 /* Sprint-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Sprint-Prefix.pch"; sourceTree = "<group>"; };
+		34169FDE4C08464EA605870F /* CDVSound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVSound.h; path = org.apache.cordova.media/CDVSound.h; sourceTree = "<group>"; };
 		3456BF727F484C878073A28D /* libsqlite3.dylib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		34B700FCA61647C5BE064427 /* UICKeyChainStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UICKeyChainStore.m; path = hu.dpal.phonegap.plugins.UniqueDeviceID/UICKeyChainStore.m; sourceTree = "<group>"; };
 		38C3F81321CE4558887C9E76 /* FacebookConnectPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FacebookConnectPlugin.h; path = com.phonegap.plugins.facebookconnect/FacebookConnectPlugin.h; sourceTree = "<group>"; };
 		3AEFC468ED6E40F2B294E36B /* UICKeyChainStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UICKeyChainStore.h; path = hu.dpal.phonegap.plugins.UniqueDeviceID/UICKeyChainStore.h; sourceTree = "<group>"; };
 		3E020C7756D34D97A567545D /* BackgroundTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BackgroundTask.m; path = uk.co.ilee.backgroundtask/BackgroundTask.m; sourceTree = "<group>"; };
 		3EEEAA5F192642C6ABECFEC7 /* CDVLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVLogger.h; path = org.apache.cordova.console/CDVLogger.h; sourceTree = "<group>"; };
+		401ADBCB6BC74F40B9C155F0 /* CDVLocalFilesystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDVLocalFilesystem.m; path = org.apache.cordova.file/CDVLocalFilesystem.m; sourceTree = "<group>"; };
 		44318FAB13214A9F9F7EED4C /* Social.framework */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		4789C2228DCD46629ABEBA33 /* CDVLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDVLogger.m; path = org.apache.cordova.console/CDVLogger.m; sourceTree = "<group>"; };
 		4DD1361DA93F40078E6499AE /* Pedometer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Pedometer.h; path = uk.co.ilee.pedometer/Pedometer.h; sourceTree = "<group>"; };
 		5765EF5B35084138801429B7 /* CDVDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDVDevice.m; path = org.apache.cordova.device/CDVDevice.m; sourceTree = "<group>"; };
+		58EDC9C071724658BBE55FCC /* CDVFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVFile.h; path = org.apache.cordova.file/CDVFile.h; sourceTree = "<group>"; };
 		5934A9D05AC1443BB3E5C8FE /* AudioToolbox.framework */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		5B1594DC16A7569C00FEF299 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		65E263BA39804775B52540EC /* CDVFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDVFile.m; path = org.apache.cordova.file/CDVFile.m; sourceTree = "<group>"; };
+		6B24B40FE3DD4665B4076275 /* CDVAssetLibraryFilesystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVAssetLibraryFilesystem.h; path = org.apache.cordova.file/CDVAssetLibraryFilesystem.h; sourceTree = "<group>"; };
 		7513127CE531493183EEDF53 /* libstdc++.dylib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
 		7E7966D41810823500FA85AD /* icon-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-40.png"; sourceTree = "<group>"; };
 		7E7966D51810823500FA85AD /* icon-40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-40@2x.png"; sourceTree = "<group>"; };
@@ -135,10 +146,13 @@
 		7E7966DB1810823500FA85AD /* icon-76@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-76@2x.png"; sourceTree = "<group>"; };
 		7E7966DC1810823500FA85AD /* icon-small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-small.png"; sourceTree = "<group>"; };
 		7E7966DD1810823500FA85AD /* icon-small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-small@2x.png"; sourceTree = "<group>"; };
+		80E2C800C5914C29B442F9A3 /* CDVAssetLibraryFilesystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDVAssetLibraryFilesystem.m; path = org.apache.cordova.file/CDVAssetLibraryFilesystem.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Sprint-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Sprint-Info.plist"; path = "../Sprint-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		91413AE86E034F209D6102AA /* FacebookConnectPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FacebookConnectPlugin.m; path = com.phonegap.plugins.facebookconnect/FacebookConnectPlugin.m; sourceTree = "<group>"; };
 		91F21600202745E58F465BD4 /* CDVNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDVNotification.m; path = org.apache.cordova.dialogs/CDVNotification.m; sourceTree = "<group>"; };
 		957E070A60234E1DAF90C7D0 /* Accounts.framework */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		9D77D84E9E4D49F5BB05D92B /* BackgroundAudio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BackgroundAudio.h; path = "nl.x-services.plugins.backgroundaudio/BackgroundAudio.h"; sourceTree = "<group>"; };
+		A03F279676D34013ACC94F7C /* CDVLocalFilesystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVLocalFilesystem.h; path = org.apache.cordova.file/CDVLocalFilesystem.h; sourceTree = "<group>"; };
 		A1B93760A0834A5292CF4D2E /* CDVVibration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDVVibration.m; path = org.apache.cordova.vibration/CDVVibration.m; sourceTree = "<group>"; };
 		A5BFB631949E491397B18065 /* CDVSplashScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDVSplashScreen.m; path = org.apache.cordova.splashscreen/CDVSplashScreen.m; sourceTree = "<group>"; };
 		ABC8DAFEE29549DA8D53D601 /* CDVStatusBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVStatusBar.h; path = org.apache.cordova.statusbar/CDVStatusBar.h; sourceTree = "<group>"; };
@@ -153,6 +167,7 @@
 		D4A0D8751607E02300AEF8BB /* Default-568h@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x~iphone.png"; sourceTree = "<group>"; };
 		D9102BE269C14E01A67F5896 /* EqatecAnalyticsPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EqatecAnalyticsPlugin.h; path = com.telerik.plugin.telerikanalytics/EqatecAnalyticsPlugin.h; sourceTree = "<group>"; };
 		E5AFCF1475B244C1B1D2CB4D /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = Sprint/Plugins/com.phonegap.plugins.facebookconnect/FacebookSDK.framework; sourceTree = "<group>"; };
+		E771F03023C0426885BAEF24 /* CDVSound.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDVSound.m; path = org.apache.cordova.media/CDVSound.m; sourceTree = "<group>"; };
 		EB87FDF21871DA7A0020F90C /* merges */ = {isa = PBXFileReference; lastKnownFileType = folder; name = merges; path = ../../merges; sourceTree = "<group>"; };
 		EB87FDF31871DA8E0020F90C /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; name = www; path = ../../www; sourceTree = "<group>"; };
 		EB87FDF41871DAF40020F90C /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = ../../config.xml; sourceTree = "<group>"; };
@@ -323,6 +338,16 @@
 				CC1DB17A0C5A45DE805C4647 /* EqatecAnalyticsPlugin.mm */,
 				D9102BE269C14E01A67F5896 /* EqatecAnalyticsPlugin.h */,
 				CE0B402A00794DA89C00954E /* EQATECAnalyticsMonitor.h */,
+				0B2DD083D73F4157810087F6 /* BackgroundAudio.m */,
+				9D77D84E9E4D49F5BB05D92B /* BackgroundAudio.h */,
+				65E263BA39804775B52540EC /* CDVFile.m */,
+				401ADBCB6BC74F40B9C155F0 /* CDVLocalFilesystem.m */,
+				80E2C800C5914C29B442F9A3 /* CDVAssetLibraryFilesystem.m */,
+				58EDC9C071724658BBE55FCC /* CDVFile.h */,
+				A03F279676D34013ACC94F7C /* CDVLocalFilesystem.h */,
+				6B24B40FE3DD4665B4076275 /* CDVAssetLibraryFilesystem.h */,
+				E771F03023C0426885BAEF24 /* CDVSound.m */,
+				34169FDE4C08464EA605870F /* CDVSound.h */,
 			);
 			name = Plugins;
 			path = Sprint/Plugins;
@@ -530,6 +555,11 @@
 				4D1BD261B0124AAA8BFCE363 /* Pedometer.m in Sources */,
 				68E75DD4A3D5476EB50410A7 /* FacebookConnectPlugin.m in Sources */,
 				21306FE407A04416BA86E8C5 /* EqatecAnalyticsPlugin.mm in Sources */,
+				54C1B27A0394498396C31DC9 /* BackgroundAudio.m in Sources */,
+				92EDDEB157F24532831220DE /* CDVFile.m in Sources */,
+				2C6A23FF7BE149EAA9992239 /* CDVLocalFilesystem.m in Sources */,
+				58D475239B9248BA9DA004FD /* CDVAssetLibraryFilesystem.m in Sources */,
+				38963760BE5B4759AD8C4778 /* CDVSound.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -617,7 +647,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = Sprint;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -657,7 +687,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = Sprint;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
