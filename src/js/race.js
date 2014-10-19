@@ -118,9 +118,11 @@ var race = (function() {
         app.f7.hidePreloader();
         console.log(raceResult);
         if (race.data.raceId) {
-            app.mainView.loadPage("result.html?raceId=" + race.data.raceId);
+            return app.mainView.loadPage("result.html?raceId=" + race.data.raceId);
         }
-        // TODO show when no result yet
+        app.showMessage("Success! This sprint will appear in your results " +
+            "after the challengee has made their submission");
+        app.mainView.loadPage("main.html");
     };
 
     var trackComplete = function () {
