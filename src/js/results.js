@@ -55,17 +55,18 @@ var results = (function() {
             }, app.friends);
 
             if (match) {
-                html += getChallengeHtml(challenge.Id, match.name);
+                html += getChallengeHtml(challenge.Id, match.name, challenge.ModifiedAt);
             }
         }, challenges);
 
         $$("#results" + id).html("<ul>" + html + "</ul>");
     };
 
-    var getChallengeHtml = function (raceId, friendName) {
+    var getChallengeHtml = function (raceId, friendName, date) {
         return "<li><a href='result.html?raceId=" + raceId +
             "' class='item-link with-animation'><div class='item-content'>" +
             "<div class='item-inner'><div class='item-title'>" + friendName +
+            "</div><div class='item-text'>" + app.prettyDate(date) +
             "</div></div></div></a></li>";
     };
 

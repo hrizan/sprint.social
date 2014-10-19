@@ -85,8 +85,6 @@ var app = (function() {
             diff = (((new Date()).getTime() - date.getTime()) / 1000),
             day_diff = Math.floor(diff / 86400);
 
-        console.log(time);
-
         if (isNaN(day_diff) || day_diff < 0 || day_diff >= 31) {
             return;
         }
