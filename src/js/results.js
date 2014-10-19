@@ -65,7 +65,6 @@ var results = (function() {
     var getChallengeHtml = function (raceId, friendName, date) {
         return "<li><a href='result.html?raceId=" + raceId +
             "' class='item-link with-animation'><div class='item-content'>" +
-            "<div class='item-media'><img src='" + 1 + "' width='40'/></div>" +
             "<div class='item-inner'><div class='item-title'>" + friendName +
             "</div><div class='item-text'>" + app.prettyDate(date) +
             "</div></div></div></a></li>";
