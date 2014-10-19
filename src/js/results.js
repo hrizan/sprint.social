@@ -11,13 +11,13 @@ var results = (function() {
     };
 
     var renderResultsOfMyChallenges = function () {
-        telerik.myChallenges(app.userToken,
+        telerik.resultsOfMyChallenges(app.userToken,
             app.user.Identity.Facebook.id,
             getResultsOfMyChallengesSuccess, renderResultsOfMyChallenges);
     };
 
     var renderResultsOfBeingChallenged = function () {
-        telerik.myChallenges(app.userToken,
+        telerik.resultsOfBeingChallenged(app.userToken,
             app.user.Identity.Facebook.id,
             getResultsOfBeingChallengedSuccess, renderResultsOfBeingChallenged);
     };
