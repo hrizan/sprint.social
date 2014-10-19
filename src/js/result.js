@@ -1,4 +1,4 @@
-/*global document, app, facebookConnectPlugin, telerik, localStorage, race ,  createjs */
+/*global $$, document, app, facebookConnectPlugin, telerik, localStorage, race ,  createjs */
 var result = (function() {
     "use strict";
 
@@ -57,11 +57,11 @@ var result = (function() {
     };
 
 
-    var runner = function(c, x) {
+    var runner = function(c, x, col) {
         var ball = new createjs.Shape();
         ball.graphics.setStrokeStyle(2, 'round', 'round');
         ball.graphics.beginStroke(('#000000'));
-        ball.graphics.beginFill("#FF0000").drawCircle(0, 0, 10);
+        ball.graphics.beginFill(col).drawCircle(0, 0, 10);
         ball.graphics.endStroke();
         ball.graphics.endFill();
         ball.graphics.setStrokeStyle(1, 'round', 'round');
@@ -75,17 +75,50 @@ var result = (function() {
     };
 
     var tweenfor = function(runner, rx, c) {
+        var ms = (rx[rx.length - 1].timeStamp - rx[0].timeStamp);
+
         var tween = createjs.Tween.get(runner, {
             loop: false
         });
         tween = tween.wait(3);
-        var rxd = 10000 / (rx[rx.length - 1].timeStamp - rx[0].timeStamp);
+        var rxd = 10000 / ms;
         for (var i = 1; i !== rx.length - 1; i = i + 1) {
             tween = tween.to({
                 x: runner.x,
                 y: scaleTo(c.height - 30, rx[i + 1].distance)
             }, rxd * (rx[i + 1].timeStamp - rx[i].timeStamp));
         }
+
+        return {
+            ms: ms,
+            tween: tween
+        };
+    };
+
+
+
+    var showResult = function(a1, a2) {
+        var solo = a2 === null;
+
+        var winning = a1;
+        var losing = a2;
+        var won = true;
+
+        if (!solo && a2.ms < a1.ms) {
+            won = false;
+            winning = a2;
+            losing = a1;
+        }
+
+        winning.tween.call(function(t) {
+            $$("#c").css("display", "none");
+            $$("#score").css("display", "block");
+            if (!solo) {
+                $$("#score h1").text((won ? "Won" : "Lost") + " in " + (winning.ms / 1000).toFixed(2) + " vs " + (losing.ms / 1000).toFixed(2) + " s");
+            } else {
+                $$("#score h1").text("Complete in " + (winning.ms / 1000).toFixed(2) + " s");
+            }
+        });
     };
 
 
@@ -111,15 +144,21 @@ var result = (function() {
             c1x = c.width / 2;
         }
 
-        var challenger = runner(c, c1x);
-        tweenfor(challenger, c1, c);
+        var challenger = runner(c, c1x, "#008080");
+        var c1animation = tweenfor(challenger, c1, c);
         stage.addChild(challenger);
 
         if (c2.length) {
-            var challengee = runner(c, 2 * (c.width / 3));
-            tweenfor(challengee, c2, c);
+            var challengee = runner(c, 2 * (c.width / 3), "#ffa500");
+            var c2animation = tweenfor(challengee, c2, c);
+
             stage.addChild(challengee);
+
+            showResult(c1animation, c2animation);
+        } else {
+            showResult(c1animation, null);
         }
+
 
         createjs.Ticker.addEventListener("tick", stage);
 
