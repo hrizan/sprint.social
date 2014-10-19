@@ -286,7 +286,8 @@ var nothing = function() {};
 var facebookConnectPlugin = {
     getAccessToken: nothing,
     login: nothing,
-    getLoginStatus: nothing
+    getLoginStatus: nothing,
+    api: nothing
 };
 
 plugins.EqatecAnalytics = {

@@ -29,11 +29,11 @@ var app = (function() {
         app.user = app.load("user");
         app.friends = app.load("friends");
 
-        //if (app.userToken) {
-        //    app.loadMain();
-        //} else {
-        app.signupView.loadPage("signup.html");
-        //}
+        if (app.userToken) {
+            app.loadMain();
+        } else {
+            app.signupView.loadPage("signup.html");
+        }
 
         setTimeout(hideSplash, 500);
     };

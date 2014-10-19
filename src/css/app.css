@@ -82,6 +82,14 @@ input[type="number"], input[type="tel"]{
     color: #fff;
 }
 
+.navbar i.logo {
+    width: 82px;
+    background: url("../img/logo-small.png");
+    background-size: cover;
+    height: 22px;
+    margin-right: 8px;
+}
+
 .navbar-inner {
     padding: 20px 0 0;
 }

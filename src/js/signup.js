@@ -61,13 +61,11 @@ var signup = (function() {
             });
     };
 
-
     signup.profileimage = function (id, cb) {
         facebookConnectPlugin.api("/" + id + "/picture?redirect=false",[],function(res){
             return cb(res.data.url);
         });
     };
-
 
     return signup;
 })();
