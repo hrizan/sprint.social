@@ -48,6 +48,9 @@ var results = (function() {
 
         fjs.each(function(challenge) {
             var match = fjs.first(function(friend) {
+                if (id === 1) {
+                    return friend.id.toString() === challenge.ChallengedId.toString();
+                }
                 return friend.id.toString() === challenge.ChallengerId.toString();
             }, app.friends);
 
