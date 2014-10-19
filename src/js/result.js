@@ -61,7 +61,7 @@ var result = (function() {
         var ball = new createjs.Shape();
         ball.graphics.setStrokeStyle(2, 'round', 'round');
         ball.graphics.beginStroke(('#000000'));
-        ball.graphics.beginFill(col).drawCircle(0, 0, 10);
+        ball.graphics.beginFill(col).drawCircle(0, 0, 50);
         ball.graphics.endStroke();
         ball.graphics.endFill();
         ball.graphics.setStrokeStyle(1, 'round', 'round');
@@ -76,11 +76,15 @@ var result = (function() {
 
     var tweenfor = function(runner, rx, c) {
         var ms = (rx[rx.length - 1].timeStamp - rx[0].timeStamp);
+        
+        console.log(rx);
+        console.log(ms);
 
         var tween = createjs.Tween.get(runner, {
             loop: false
         });
-        tween = tween.wait(3);
+        tween = tween.to({x:runner.x,y:30});
+        tween = tween.wait(2000);
         var rxd = 10000 / ms;
         for (var i = 1; i !== rx.length - 1; i = i + 1) {
             tween = tween.to({
@@ -114,7 +118,7 @@ var result = (function() {
             $$("#c").css("display", "none");
             $$("#score").css("display", "block");
             if (!solo) {
-                $$("#score h1").text((won ? "Won" : "Lost") + " in " + (winning.ms / 1000).toFixed(2) + " vs " + (losing.ms / 1000).toFixed(2) + " s");
+                $$("#score h1").text("You " + (won ? "Won" : "Lost") + "! in " + (winning.ms / 1000).toFixed(2) + " v " + (losing.ms / 1000).toFixed(2) + " s");
             } else {
                 $$("#score h1").text("Complete in " + (winning.ms / 1000).toFixed(2) + " s");
             }
