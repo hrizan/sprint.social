@@ -122,6 +122,9 @@ var app = (function() {
             dynamicNavbar: true
         });
 
+        $$(".panel-left").on("open", StatusBar.hide);
+        $$(".panel-left").on("closed", StatusBar.show);
+
         document.addEventListener("pageInit", onPageInit);
     };
 
