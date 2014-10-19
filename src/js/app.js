@@ -28,7 +28,6 @@ var app = (function() {
         app.userToken = app.load("userToken");
         app.user = app.load("user");
         app.friends = app.load("friends");
-        app.results = app.load("results");
 
         if (app.userToken) {
             app.loadMain();
