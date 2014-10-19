@@ -91,6 +91,10 @@ input[type="number"], input[type="tel"]{
     padding: 2px 15px;
 }
 
+.xl {
+    font-size: 5em;
+}
+
 .challenge-block {
     margin: 94px 0 0;
 }
