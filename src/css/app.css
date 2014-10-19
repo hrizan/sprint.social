@@ -219,3 +219,9 @@ i.icon-solo {
     background: #B2ADA7;
     color: #fff;
 }
+
+.list-block .item-text {
+    height: auto;
+    color: #B2ADA7;
+    font-size: 13px;
+}
